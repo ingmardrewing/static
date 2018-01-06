@@ -132,7 +132,17 @@ func NewPageManager() *PageManager {
 	return new(PageManager)
 }
 
-type PageManager struct{}
+// TODO: move all configuration to main function
+// - AddMarginal, AddPost, AddPage - each with an own splice
+// - AddMarginalContext, AddPostContext, AddPageContext, AddPostsNaviContext
+// - put pages into their contexts, here
+// - Handle file creation here
+type PageManager struct {
+	marginal      []Element
+	posts         []Element
+	postNaviPages []Element
+	pages         []Element
+}
 
 func (p *PageManager) GeneratePostNaviPages(atPath string, posts []Element) []Element {
 	pnps := []Element{}
@@ -151,7 +161,7 @@ func (p *PageManager) GeneratePostNaviPages(atPath string, posts []Element) []El
 		pnps = append(pnps, pnp)
 	}
 
-	return p.convertToElements(pnps)
+	return pnps
 }
 
 func (p *PageManager) generateNaviPageContent(bundle *elementBundle) string {
@@ -178,20 +188,14 @@ func (p *PageManager) generateNaviPageContent(bundle *elementBundle) string {
 	return n.Render()
 }
 
-func (p *PageManager) convertToElements(pages []Element) []Element {
-	elements := []Element{}
-	for _, page := range pages {
-		elements = append(elements, page)
-	}
-	return elements
-}
+// util
 
-func (p *PageManager) GetMarginalLocations(marginal []Element) []Location {
-	marginalLocs := []Location{}
-	for _, p := range marginal {
-		marginalLocs = append(marginalLocs, p)
+func ElementsToLocations(elements []Element) []Location {
+	locs := []Location{}
+	for _, p := range elements {
+		locs = append(locs, p)
 	}
-	return marginalLocs
+	return locs
 }
 
 func generateElementBundles(pages []Element) []*elementBundle {
