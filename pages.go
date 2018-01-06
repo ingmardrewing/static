@@ -132,18 +132,11 @@ func NewPageManager() *PageManager {
 	return new(PageManager)
 }
 
-type PageManager struct {
-	booklistData  Element
-	aboutData     Element
-	imprintData   Element
-	posts         []Element
-	pages         []Element
-	marginal      []Element
-	postNaviPages []Element
-}
+type PageManager struct{}
 
-func (p *PageManager) GeneratePostNaviPages(atPath string) {
-	bundles := generateElementBundles(p.posts)
+func (p *PageManager) GeneratePostNaviPages(atPath string, posts []Element) []Element {
+	pnps := []Element{}
+	bundles := generateElementBundles(posts)
 	last := len(bundles) - 1
 	for i, b := range bundles {
 		naviPageContent := p.generateNaviPageContent(b)
@@ -155,8 +148,10 @@ func (p *PageManager) GeneratePostNaviPages(atPath string) {
 		pnp := NewPage(i, "blog navi", "descr ...",
 			naviPageContent, "", "", "https://drewing.de",
 			atPath, filename, "", "")
-		p.addPostNaviPage(pnp)
+		pnps = append(pnps, pnp)
 	}
+
+	return p.convertToElements(pnps)
 }
 
 func (p *PageManager) generateNaviPageContent(bundle *elementBundle) string {
@@ -183,38 +178,6 @@ func (p *PageManager) generateNaviPageContent(bundle *elementBundle) string {
 	return n.Render()
 }
 
-func (p *PageManager) GetFooterPages() []Element {
-	elms := []Element{}
-	for _, pg := range p.marginal {
-		elms = append(elms, pg)
-	}
-	return elms
-}
-
-func (p *PageManager) addPostNaviPage(page *Page) {
-	p.postNaviPages = append(p.postNaviPages, page)
-}
-
-func (p *PageManager) AddPost(post Element) {
-	p.posts = append(p.posts, post)
-}
-
-func (p *PageManager) AddMarginal(marg Element) {
-	p.marginal = append(p.marginal, marg)
-}
-
-func (p *PageManager) GetPosts() []Element {
-	return p.convertToElements(p.posts)
-}
-
-func (p *PageManager) GetPostNaviPages() []Element {
-	return p.convertToElements(p.postNaviPages)
-}
-
-func (p *PageManager) GetPages() []Element {
-	return p.convertToElements(p.pages)
-}
-
 func (p *PageManager) convertToElements(pages []Element) []Element {
 	elements := []Element{}
 	for _, page := range pages {
@@ -223,9 +186,9 @@ func (p *PageManager) convertToElements(pages []Element) []Element {
 	return elements
 }
 
-func (p *PageManager) GetMarginalLocations() []Location {
+func (p *PageManager) GetMarginalLocations(marginal []Element) []Location {
 	marginalLocs := []Location{}
-	for _, p := range p.marginal {
+	for _, p := range marginal {
 		marginalLocs = append(marginalLocs, p)
 	}
 	return marginalLocs
