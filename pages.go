@@ -144,19 +144,19 @@ type PageManager struct {
 	pages         []Element
 }
 
-func (p *PageManager) GeneratePostNaviPages(atPath string, posts []Element) []Element {
+// TODO Factor out Generation into another struct / func
+func (p *PageManager) GeneratePostNaviPages(atPath string, posts []Element, title, description, domain, classDiv, classA, classSpan string) []Element {
 	pnps := []Element{}
-	bundles := generateElementBundles(posts)
-	last := len(bundles) - 1
-	for i, b := range bundles {
-		naviPageContent := p.generateNaviPageContent(b)
+	elementss := generateElementBundles(posts)
+	last := len(elementss) - 1
+	for i, elems := range elementss {
+		naviPageContent := p.generateNaviPageContent(elems, classDiv, classA, classSpan)
 		filename := "index" + strconv.Itoa(i) + ".html"
 		if i == last {
 			filename = "index.html"
 		}
-		// TODO fix description definition for post navi pages
-		pnp := NewPage(i, "blog navi", "descr ...",
-			naviPageContent, "", "", "https://drewing.de",
+		pnp := NewPage(i, title, description,
+			naviPageContent, "", "", domain,
 			atPath, filename, "", "")
 		pnps = append(pnps, pnp)
 	}
@@ -164,9 +164,8 @@ func (p *PageManager) GeneratePostNaviPages(atPath string, posts []Element) []El
 	return pnps
 }
 
-func (p *PageManager) generateNaviPageContent(bundle *elementBundle) string {
-	n := htmlDoc.NewNode("div", "", "class", "blognavipage")
-	elems := bundle.getElements()
+func (p *PageManager) generateNaviPageContent(elems []Element, classDiv, classA, classSpan string) string {
+	n := htmlDoc.NewNode("div", "", "class", classDiv)
 	for _, e := range elems {
 		ta := e.GetThumbnailUrl()
 		if ta == "" {
@@ -175,10 +174,10 @@ func (p *PageManager) generateNaviPageContent(bundle *elementBundle) string {
 		path := e.GetPath()
 		a := htmlDoc.NewNode("a", " ",
 			"href", path,
-			"class", "blognavientry__tile")
+			"class", classA)
 		span := htmlDoc.NewNode("span", " ",
 			"style", "background-image: url("+e.GetThumbnailUrl()+")",
-			"class", "blognavientry__image")
+			"class", classSpan)
 		h2 := htmlDoc.NewNode("h2", e.GetTitle())
 		a.AddChild(span)
 		a.AddChild(h2)
@@ -198,7 +197,7 @@ func ElementsToLocations(elements []Element) []Location {
 	return locs
 }
 
-func generateElementBundles(pages []Element) []*elementBundle {
+func generateElementBundles(pages []Element) [][]Element {
 	length := len(pages)
 	reversed := []Element{}
 	for i := length - 1; i >= 0; i-- {
@@ -220,10 +219,13 @@ func generateElementBundles(pages []Element) []*elementBundle {
 
 	length = len(bundles)
 	revbundles := []*elementBundle{}
+	elementss := [][]Element{}
 	for i := length - 1; i >= 0; i-- {
 		revbundles = append(revbundles, bundles[i])
+		elementss = append(elementss, bundles[i].getElements())
 	}
-	return revbundles
+
+	return elementss
 }
 
 func newElementBundle() *elementBundle {
