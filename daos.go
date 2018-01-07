@@ -28,18 +28,18 @@ func (j *Json) ReadInt(value []byte, keys ...string) int {
 type DAO interface {
 	ExtractFromJson()
 	FillJson() []byte
-	Id() int
-	Title() string
-	TitlePlain() string
-	ThumbUrl() string
-	ImageUrl() string
-	Description() string
-	DisqusId() string
-	CreateDate() string
-	Content() string
-	Url() string
-	PathFromDocRoot() string
-	HtmlFilename() string
+	Id(...int) int
+	Title(...string) string
+	TitlePlain(...string) string
+	ThumbUrl(...string) string
+	ImageUrl(...string) string
+	Description(...string) string
+	DisqusId(...string) string
+	CreateDate(...string) string
+	Content(...string) string
+	Url(...string) string
+	PathFromDocRoot(...string) string
+	HtmlFilename(...string) string
 }
 
 // docDAO
@@ -53,51 +53,87 @@ type docDAO struct {
 	fspath, fsfilename string
 }
 
-func (p *docDAO) Id() int {
+func (p *docDAO) Id(id ...int) int {
+	if len(id) > 0 {
+		p.id = id[0]
+	}
 	return p.id
 }
 
-func (p *docDAO) Title() string {
+func (p *docDAO) Title(title ...string) string {
+	if len(title) > 0 {
+		p.title = title[0]
+	}
 	return p.title
 }
 
-func (p *docDAO) TitlePlain() string {
+func (p *docDAO) TitlePlain(titlePlain ...string) string {
+	if len(titlePlain) > 0 {
+		p.titlePlain = titlePlain[0]
+	}
 	return p.titlePlain
 }
 
-func (p *docDAO) ThumbUrl() string {
+func (p *docDAO) ThumbUrl(thumbUrl ...string) string {
+	if len(thumbUrl) > 0 {
+		p.thumbUrl = thumbUrl[0]
+	}
 	return p.thumbUrl
 }
 
-func (p *docDAO) ImageUrl() string {
+func (p *docDAO) ImageUrl(imageUrl ...string) string {
+	if len(imageUrl) > 0 {
+		p.imageUrl = imageUrl[0]
+	}
 	return p.imageUrl
 }
 
-func (p *docDAO) Description() string {
+func (p *docDAO) Description(desc ...string) string {
+	if len(desc) > 0 {
+		p.description = desc[0]
+	}
 	return p.description
 }
 
-func (p *docDAO) DisqusId() string {
+func (p *docDAO) DisqusId(disqusId ...string) string {
+	if len(disqusId) > 0 {
+		p.disqusId = disqusId[0]
+	}
 	return p.disqusId
 }
 
-func (p *docDAO) CreateDate() string {
+func (p *docDAO) CreateDate(date ...string) string {
+	if len(date) > 0 {
+		p.createDate = date[0]
+	}
 	return p.createDate
 }
 
-func (p *docDAO) Content() string {
+func (p *docDAO) Content(content ...string) string {
+	if len(content) > 0 {
+		p.content = content[0]
+	}
 	return p.content
 }
 
-func (p *docDAO) Url() string {
+func (p *docDAO) Url(url ...string) string {
+	if len(url) > 0 {
+		p.url = url[0]
+	}
 	return p.url
 }
 
-func (p *docDAO) PathFromDocRoot() string {
+func (p *docDAO) PathFromDocRoot(path ...string) string {
+	if len(path) > 0 {
+		p.path = path[0]
+	}
 	return p.path
 }
 
-func (p *docDAO) HtmlFilename() string {
+func (p *docDAO) HtmlFilename(htmlFilename ...string) string {
+	if len(htmlFilename) > 0 {
+		p.filename = htmlFilename[0]
+	}
 	return p.filename
 }
 
