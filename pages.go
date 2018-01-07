@@ -56,6 +56,7 @@ type Page struct {
 	DisqusId      string
 }
 
+// NewPage
 func NewPage(
 	id int,
 	title, description, content,
