@@ -13,7 +13,7 @@ import (
 func TestMain(m *testing.M) {
 	setup()
 	code := m.Run()
-	tearDown()
+	//	tearDown()
 	os.Exit(code)
 }
 
@@ -65,6 +65,13 @@ func TestGenSite(t *testing.T) {
 
 	if !index0Exists {
 		t.Error("No css file found at:", index0Path)
+	}
+
+	postPath := path.Join(deployDir, "blog", "test", "index.html")
+	postExists, _ := fs.PathExists(postPath)
+
+	if !postExists {
+		t.Error("No css file found at:", postExists)
 	}
 }
 
