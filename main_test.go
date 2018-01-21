@@ -7,6 +7,35 @@ import (
 	"github.com/ingmardrewing/staticPersistence"
 )
 
+func TestMain(m *testing.M) {
+	conf = staticPersistence.NewConfig("testResources/config.json")
+	code := m.Run()
+	os.Exit(code)
+}
+
+func TestConfRead(t *testing.T) {
+	expected := "styles.css"
+	actual := conf.Read("deploy", "cssFileName")
+
+	if expected != actual {
+		t.Errorf("Expected %s but got %s\n", expected, actual)
+	}
+}
+
+func TestGenSite(t *testing.T) {
+	generateSiteLocally()
+
+}
+
+func TestGeneratePages(t *testing.T) {
+	expected := "styles.css"
+	actual := conf.Read("deploy", "cssFileName")
+
+	if expected != actual {
+		t.Errorf("Expected %s but got %s\n", expected, actual)
+	}
+}
+
 func TestInferBlogTitleFromFilename(t *testing.T) {
 	title, titlePlain := inferBlogTitleFromFilename("ATest29,This.png")
 

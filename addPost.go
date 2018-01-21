@@ -171,7 +171,7 @@ func generateExzerpt(text string) string {
 	if len(text) > 155 {
 		return fmt.Sprintf("%.155s ...", text)
 	} else if len(text) == 0 {
-		return conf.Read("excerpt")
+		return conf.Read("defaultContent", "blogExcerpt")
 	}
 	return text
 }

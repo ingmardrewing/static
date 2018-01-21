@@ -19,12 +19,13 @@ import (
 )
 
 var (
-	fimg    = false
-	fjson   = false
-	fmake   = false
-	fstrato = false
-	fclear  = false
-	conf    *staticPersistence.Config
+	fimg       = false
+	fjson      = false
+	fmake      = false
+	fstrato    = false
+	fclear     = false
+	conf       *staticPersistence.Config
+	configPath = "/Users/drewing/Desktop/drewing2018/config.json"
 )
 
 func init() {
@@ -34,7 +35,7 @@ func init() {
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
 	flag.Parse()
-	conf = staticPersistence.NewConfig("/Users/drewing/Desktop/drewing2018/config.json")
+	conf = staticPersistence.NewConfig(configPath)
 }
 
 func main() {
@@ -43,6 +44,7 @@ func main() {
 	pa.Read()
 	checkFlags(pa, addimage, addJsonFile, strato, clear, generateSiteLocally)
 	enterInteractiveMode(pa)
+
 }
 
 func flagsPresent() bool {
