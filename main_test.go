@@ -2,15 +2,33 @@ package main
 
 import (
 	"os"
+	"path"
+	"runtime"
 	"testing"
 
+	"github.com/ingmardrewing/fs"
 	"github.com/ingmardrewing/staticPersistence"
 )
 
 func TestMain(m *testing.M) {
-	conf = staticPersistence.NewConfig("testResources/config.json")
+	setup()
 	code := m.Run()
+	tearDown()
 	os.Exit(code)
+}
+
+func setup() {
+	conf = staticPersistence.NewConfig("testResources/config.json")
+}
+
+func tearDown() {
+	filepath := path.Join(getTestFileDirPath(), conf.Read("deploy", "localDir"))
+	fs.RemoveDirContents(filepath)
+}
+
+func getTestFileDirPath() string {
+	_, filename, _, _ := runtime.Caller(1)
+	return path.Dir(filename)
 }
 
 func TestConfRead(t *testing.T) {
@@ -25,6 +43,29 @@ func TestConfRead(t *testing.T) {
 func TestGenSite(t *testing.T) {
 	generateSiteLocally()
 
+	deployDir := path.Join(getTestFileDirPath(),
+		conf.Read("deploy", "localDir"))
+
+	cssPath := path.Join(deployDir, "styles.css")
+	cssFileExists, _ := fs.PathExists(cssPath)
+
+	if !cssFileExists {
+		t.Error("No css file found at:", cssPath)
+	}
+
+	indexPath := path.Join(deployDir, "blog", "index.html")
+	indexExists, _ := fs.PathExists(indexPath)
+
+	if !indexExists {
+		t.Error("No css file found at:", indexPath)
+	}
+
+	index0Path := path.Join(deployDir, "blog", "index0.html")
+	index0Exists, _ := fs.PathExists(index0Path)
+
+	if !index0Exists {
+		t.Error("No css file found at:", index0Path)
+	}
 }
 
 func TestGeneratePages(t *testing.T) {
