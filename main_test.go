@@ -13,7 +13,6 @@ import (
 func TestMain(m *testing.M) {
 	setup()
 	code := m.Run()
-	//	tearDown()
 	os.Exit(code)
 }
 
@@ -73,6 +72,8 @@ func TestGenSite(t *testing.T) {
 	if !postExists {
 		t.Error("No css file found at:", postExists)
 	}
+
+	tearDown()
 }
 
 func TestGeneratePages(t *testing.T) {
