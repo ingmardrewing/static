@@ -168,10 +168,16 @@ func (p *pageJsonFactory) generateContentFromMarkdown(input string) string {
 }
 
 func generateExzerpt(text string) string {
+	text = stripLinksAndImages(text)
 	if len(text) > 155 {
 		return fmt.Sprintf("%.155s ...", text)
 	} else if len(text) == 0 {
 		return conf.Read("defaultContent", "blogExcerpt")
 	}
 	return text
+}
+
+func stripLinksAndImages(text string) string {
+	rx := regexp.MustCompile(`\[.*\]\(.*\)`)
+	return rx.ReplaceAllString(text, "")
 }

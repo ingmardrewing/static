@@ -103,3 +103,14 @@ func TestGenerateBlogUrl(t *testing.T) {
 		t.Error("Expected", expected, "but got", actual)
 	}
 }
+
+func TestStripLinksAndImages(t *testing.T) {
+
+	text := "[weafasdfasdfali](asdfasdfasdf)wurst"
+	actual := stripLinksAndImages(text)
+	expected := "wurst"
+
+	if actual != expected {
+		t.Error("Expected", expected, "but got", actual)
+	}
+}
