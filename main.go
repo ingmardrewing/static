@@ -229,10 +229,11 @@ func addJsonFile2(adder staticPersistence.PostAdder, title, title_plain string) 
 	blogurl := "https://drewing.de/blog/"
 	postsdir := "/Users/drewing/Desktop/drewing2018/posts/"
 
-	b := NewPageJsonFactory(
+	b := staticController.NewPageJsonFactory(
 		adder.GetMdInitContent(), "", blogurl, "",
 		adder.GetMdFilePath(), smallimg, mediumimg, bigimg)
-	dto, filename := b.GetDto(domain, title, title_plain, postsdir)
+	defaultExcerpt := conf.Read("defaultContent", "blogExcerpt")
+	dto, filename := b.GetDto(domain, title, title_plain, postsdir, defaultExcerpt)
 	staticPersistence.WritePostDtoToJson(dto, postsdir+"/", filename)
 }
 
@@ -245,11 +246,11 @@ func addimage(adder staticPersistence.PostAdder) {
 	tmpl := `{"postImg":"%s","thumbImg":"%s","fullImg":"%s"}`
 	path := adder.GetImgFilePath()
 	fmt.Println("path:", path)
-	im := NewImageManager(bucket, path)
+	im := staticController.NewImageManager(bucket, path)
 	im.AddImageSize(800)
 	im.AddImageSize(390)
-	im.prepareImages()
-	im.uploadImages()
+	im.PrepareImages()
+	im.UploadImages()
 
 	urls := im.GetImageUrls()
 	json := fmt.Sprintf(tmpl, urls[0], urls[1], urls[2])
