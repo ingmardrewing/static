@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/ingmardrewing/fs"
+	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
 
@@ -28,6 +29,34 @@ func tearDown() {
 func getTestFileDirPath() string {
 	_, filename, _, _ := runtime.Caller(1)
 	return path.Dir(filename)
+}
+
+func TestAddImage(t *testing.T) {
+	path := getTestFileDirPath() + "/testResources/src/add/"
+	fileName := "TestImage.png"
+
+	pathExists, _ := fs.PathExists(path + "/" + fileName)
+	if !pathExists {
+		t.Error("Expected TestImage.png to be at ", path+"/"+fileName)
+	}
+
+	im := staticController.NewImageManager("irrelevant", path+fileName)
+	transformImages(im)
+
+	thumbnailName := "TestImage-w390.png"
+	thumbnailExists, _ := fs.PathExists(path + thumbnailName)
+	if !thumbnailExists {
+		t.Errorf("Expected thumbnail image to exist, but it doesn't")
+	}
+
+	postImageName := "TestImage-w800.png"
+	postImageExists, _ := fs.PathExists(path + postImageName)
+	if !postImageExists {
+		t.Errorf("Expected post image to exist, but it doesn't")
+	}
+
+	fs.RemoveFile(path, thumbnailName)
+	fs.RemoveFile(path, postImageName)
 }
 
 func TestConfRead(t *testing.T) {

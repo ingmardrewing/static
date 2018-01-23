@@ -238,18 +238,13 @@ func addJsonFile2(adder staticPersistence.PostAdder, title, title_plain string) 
 }
 
 func addimage(adder staticPersistence.PostAdder) {
-	bucket := os.Getenv("AWS_BUCKET")
-
 	imgfile := adder.GetImgFileName()
-	fmt.Printf("Using aws bucket %s\n", bucket)
-
 	tmpl := `{"postImg":"%s","thumbImg":"%s","fullImg":"%s"}`
 	path := adder.GetImgFilePath()
-	fmt.Println("path:", path)
+	bucket := os.Getenv("AWS_BUCKET")
+
 	im := staticController.NewImageManager(bucket, path)
-	im.AddImageSize(800)
-	im.AddImageSize(390)
-	im.PrepareImages()
+	transformImages(im)
 	im.UploadImages()
 
 	urls := im.GetImageUrls()
@@ -260,6 +255,12 @@ func addimage(adder staticPersistence.PostAdder) {
 	fc.SetFilename(imgfile + ".json")
 	fc.SetDataAsString(json)
 	fc.Write()
+}
+
+func transformImages(im *staticController.ImageManager) {
+	im.AddImageSize(800)
+	im.AddImageSize(390)
+	im.PrepareImages()
 }
 
 /* util */
