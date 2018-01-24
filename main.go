@@ -11,9 +11,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/buger/jsonparser"
 	"github.com/ingmardrewing/actions"
-	"github.com/ingmardrewing/fs"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
@@ -47,7 +45,7 @@ func main() {
 	dirpath := os.Getenv("BLOG_DEFAULT_DIR")
 	pa := staticPersistence.NewPostAdder(dirpath)
 	pa.Read()
-	checkFlags(pa, addimage, addJsonFile, strato, clear, generateSiteLocally)
+	checkFlags(pa, addJsonFile, strato, clear, generateSiteLocally)
 	enterInteractiveMode(pa)
 
 }
@@ -56,11 +54,8 @@ func flagsPresent() bool {
 	return fimg || fjson || fmake || fstrato || fclear
 }
 
-func checkFlags(pa staticPersistence.PostAdder, addImg, addJson, upload, clr func(adder staticPersistence.PostAdder), genSite func()) {
+func checkFlags(pa staticPersistence.PostAdder, addJson, upload, clr func(adder staticPersistence.PostAdder), genSite func()) {
 	if flagsPresent() {
-		if fimg {
-			addImg(pa)
-		}
 		if fjson {
 			addJson(pa)
 		}
@@ -107,12 +102,6 @@ func enterInteractiveMode(adder staticPersistence.PostAdder) {
 			strato(adder)
 		})
 	c.AddAction(
-		"img",
-		"Generate and upload images to AWS, write URLs to txt file",
-		func() {
-			addimage(adder)
-		})
-	c.AddAction(
 		"auto",
 		"generate images, json and generate local site",
 		func() {
@@ -141,9 +130,6 @@ func auto(adder staticPersistence.PostAdder) {
 		log.Println("No image file in default dir. Nothing to do.")
 		return
 	}
-	title, titlePlain := inferBlogTitleFromFilename(adder.GetImgFileName())
-	addimage(adder)
-	addJsonFile2(adder, title, titlePlain)
 	generateSiteLocally()
 }
 
@@ -184,64 +170,12 @@ func askUserForTitle() (string, string) {
 }
 
 func addJsonFile(adder staticPersistence.PostAdder) {
-	var title, title_plain string
-
-	imageFileName := adder.GetImgFileName()
-	if imageFileName == "" {
-		title, title_plain = askUserForTitle()
-	} else {
-		title, title_plain = inferBlogTitleFromFilename(imageFileName)
-	}
-	addJsonFile2(adder, title, title_plain)
+	bucket := os.Getenv("AWS_BUCKET")
+	bdg := staticController.NewBlogDataGenerator(bucket, conf.Read("src", "addDir"), conf.Read("src", "postsDir"), conf.Read("defaultContent", "blogExcerpt"))
+	bdg.Generate()
 }
 
-func addJsonFile2(adder staticPersistence.PostAdder, title, title_plain string) {
-	adder.Read()
-	if len(adder.GetJsonFileName()) == 0 {
-		log.Fatalln("No json file in", adder.GetJsonFilePath())
-	}
-	jsondata := []byte(adder.GetJsonFileContent())
-
-	smallimg, _ := jsonparser.GetString(jsondata, "thumbImg")
-	mediumimg, _ := jsonparser.GetString(jsondata, "postImg")
-	bigimg, _ := jsonparser.GetString(jsondata, "fullImg")
-
-	if len(adder.GetMdFileName()) == 0 {
-		mdname := "image-only.md"
-		tmpl := `[![](%s)](%s)`
-		mdtxt := fmt.Sprintf(tmpl, mediumimg, bigimg)
-
-		fc := fs.NewFileContainer()
-		fc.SetDataAsString(mdtxt)
-		fc.SetPath(adder.GetMdFilePath())
-		fc.SetFilename(mdname)
-		fc.Write()
-
-	} else {
-		mddata := adder.GetMdContent()
-		tmpl := "[![](%s)](%s)%s"
-		mdtxt := fmt.Sprintf(tmpl, mediumimg, bigimg, mddata)
-
-		fc := fs.NewFileContainer()
-		fc.SetDataAsString(mdtxt)
-		fc.SetFilename(adder.GetMdFileName())
-		fc.SetPath(adder.GetDir())
-		fc.Write()
-	}
-	adder.Read()
-
-	domain := "drewing.de"
-	blogurl := "https://drewing.de/blog/"
-	postsdir := "/Users/drewing/Desktop/drewing2018/posts/"
-
-	b := staticController.NewPageJsonFactory(
-		adder.GetMdInitContent(), "", blogurl, "",
-		adder.GetMdFilePath(), smallimg, mediumimg, bigimg)
-	defaultExcerpt := conf.Read("defaultContent", "blogExcerpt")
-	dto, filename := b.GetDto(domain, title, title_plain, postsdir, defaultExcerpt)
-	staticPersistence.WritePostDtoToJson(dto, postsdir+"/", filename)
-}
-
+/*
 func addimage(adder staticPersistence.PostAdder) {
 	imgfile := adder.GetImgFileName()
 	tmpl := `{"postImg":"%s","thumbImg":"%s","fullImg":"%s"}`
@@ -250,6 +184,9 @@ func addimage(adder staticPersistence.PostAdder) {
 
 	im := staticController.NewImageManager(bucket, path)
 	transformImages(im)
+	im.AddImageSize(800)
+	im.AddImageSize(390)
+	im.PrepareImages()
 	im.UploadImages()
 
 	urls := im.GetImageUrls()
@@ -261,6 +198,7 @@ func addimage(adder staticPersistence.PostAdder) {
 	fc.SetDataAsString(json)
 	fc.Write()
 }
+*/
 
 func transformImages(im *staticController.ImageManager) {
 	im.AddImageSize(800)

@@ -178,7 +178,6 @@ func TestCheckFlags(t *testing.T) {
 	uploadCalled := false
 	clearCalled := false
 
-	addImgFn := func(a staticPersistence.PostAdder) { addImgCalled = true }
 	addJsonFn := func(a staticPersistence.PostAdder) { addJsonCalled = true }
 	genSiteFn := func() { genSiteCalled = true }
 	uploadFn := func(a staticPersistence.PostAdder) { uploadCalled = true }
@@ -190,7 +189,7 @@ func TestCheckFlags(t *testing.T) {
 
 	dirpath := os.Getenv("BLOG_DEFAULT_DIR")
 	pa := staticPersistence.NewPostAdder(dirpath)
-	checkFlags(pa, addImgFn, addJsonFn, uploadFn, clearFn, genSiteFn)
+	checkFlags(pa, addJsonFn, uploadFn, clearFn, genSiteFn)
 
 	if !(addImgCalled && addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
 		t.Error("Expected all functions to be executed, but they weren't")
