@@ -42,31 +42,27 @@ func init() {
 }
 
 func main() {
-	dirpath := os.Getenv("BLOG_DEFAULT_DIR")
-	pa := staticPersistence.NewPostAdder(dirpath)
-	pa.Read()
-	checkFlags(pa, addJsonFile, strato, clear, generateSiteLocally)
-	enterInteractiveMode(pa)
-
+	checkFlags(addJsonFile, strato, clear, generateSiteLocally)
+	enterInteractiveMode()
 }
 
 func flagsPresent() bool {
 	return fimg || fjson || fmake || fstrato || fclear
 }
 
-func checkFlags(pa staticPersistence.PostAdder, addJson, upload, clr func(adder staticPersistence.PostAdder), genSite func()) {
+func checkFlags(addJson, upload, clr, genSite func()) {
 	if flagsPresent() {
 		if fjson {
-			addJson(pa)
+			addJson()
 		}
 		if fmake {
 			genSite()
 		}
 		if fstrato {
-			upload(pa)
+			upload()
 		}
 		if fclear {
-			clr(pa)
+			clr()
 		}
 		os.Exit(0)
 	}
@@ -77,7 +73,7 @@ func generateSiteLocally() {
 	sc.UpdateStaticSite()
 }
 
-func enterInteractiveMode(adder staticPersistence.PostAdder) {
+func enterInteractiveMode() {
 	c := actions.NewChoice()
 	c.AddAction(
 		"exit",
@@ -93,25 +89,19 @@ func enterInteractiveMode(adder staticPersistence.PostAdder) {
 		"json",
 		"Add a json blog file",
 		func() {
-			addJsonFile(adder)
+			addJsonFile()
 		})
 	c.AddAction(
 		"strato",
 		"Upload generated html, css and js to strato (www.drewing.de)",
 		func() {
-			strato(adder)
-		})
-	c.AddAction(
-		"auto",
-		"generate images, json and generate local site",
-		func() {
-			auto(adder)
+			strato()
 		})
 	c.AddAction(
 		"clear",
 		"clear auto blog dir",
 		func() {
-			clear(adder)
+			clear()
 		})
 
 	for {
@@ -119,18 +109,10 @@ func enterInteractiveMode(adder staticPersistence.PostAdder) {
 	}
 }
 
-func strato(adder staticPersistence.PostAdder) {
+func strato() {
 	fmt.Println("Uploading content to strato .. may take a while")
 	c := newCommand("blogUpload.pl")
 	c.run()
-}
-
-func auto(adder staticPersistence.PostAdder) {
-	if adder.GetImgFileName() == "" {
-		log.Println("No image file in default dir. Nothing to do.")
-		return
-	}
-	generateSiteLocally()
 }
 
 func inferBlogTitleFromFilename(filename string) (string, string) {
@@ -152,7 +134,7 @@ func inferBlogTitlePlain(filename string) string {
 	return strings.ToLower(dashSeparated)
 }
 
-func clear(adder staticPersistence.PostAdder) {
+func clear() {
 	c := newCommand("cleardir.pl")
 	c.run()
 }
@@ -169,41 +151,10 @@ func askUserForTitle() (string, string) {
 	return title, title_plain
 }
 
-func addJsonFile(adder staticPersistence.PostAdder) {
+func addJsonFile() {
 	bucket := os.Getenv("AWS_BUCKET")
 	bdg := staticController.NewBlogDataGenerator(bucket, conf.Read("src", "addDir"), conf.Read("src", "postsDir"), conf.Read("defaultContent", "blogExcerpt"))
 	bdg.Generate()
-}
-
-/*
-func addimage(adder staticPersistence.PostAdder) {
-	imgfile := adder.GetImgFileName()
-	tmpl := `{"postImg":"%s","thumbImg":"%s","fullImg":"%s"}`
-	path := adder.GetImgFilePath()
-	bucket := os.Getenv("AWS_BUCKET")
-
-	im := staticController.NewImageManager(bucket, path)
-	transformImages(im)
-	im.AddImageSize(800)
-	im.AddImageSize(390)
-	im.PrepareImages()
-	im.UploadImages()
-
-	urls := im.GetImageUrls()
-	json := fmt.Sprintf(tmpl, urls[0], urls[1], urls[2])
-
-	fc := fs.NewFileContainer()
-	fc.SetPath(adder.GetDir())
-	fc.SetFilename(imgfile + ".json")
-	fc.SetDataAsString(json)
-	fc.Write()
-}
-*/
-
-func transformImages(im *staticController.ImageManager) {
-	im.AddImageSize(800)
-	im.AddImageSize(390)
-	im.PrepareImages()
 }
 
 /* util */

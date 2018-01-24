@@ -7,7 +7,6 @@ import (
 	"testing"
 
 	"github.com/ingmardrewing/fs"
-	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
 
@@ -29,34 +28,6 @@ func tearDown() {
 func getTestFileDirPath() string {
 	_, filename, _, _ := runtime.Caller(1)
 	return path.Dir(filename)
-}
-
-func TestAddImage(t *testing.T) {
-	path := getTestFileDirPath() + "/testResources/src/add/"
-	fileName := "TestImage.png"
-
-	pathExists, _ := fs.PathExists(path + "/" + fileName)
-	if !pathExists {
-		t.Error("Expected TestImage.png to be at ", path+"/"+fileName)
-	}
-
-	im := staticController.NewImageManager("irrelevant", path+fileName)
-	transformImages(im)
-
-	thumbnailName := "TestImage-w390.png"
-	thumbnailExists, _ := fs.PathExists(path + thumbnailName)
-	if !thumbnailExists {
-		t.Errorf("Expected thumbnail image to exist, but it doesn't")
-	}
-
-	postImageName := "TestImage-w800.png"
-	postImageExists, _ := fs.PathExists(path + postImageName)
-	if !postImageExists {
-		t.Errorf("Expected post image to exist, but it doesn't")
-	}
-
-	fs.RemoveFile(path, thumbnailName)
-	fs.RemoveFile(path, postImageName)
 }
 
 func TestConfRead(t *testing.T) {
@@ -178,18 +149,16 @@ func TestCheckFlags(t *testing.T) {
 	uploadCalled := false
 	clearCalled := false
 
-	addJsonFn := func(a staticPersistence.PostAdder) { addJsonCalled = true }
+	addJsonFn := func() { addJsonCalled = true }
 	genSiteFn := func() { genSiteCalled = true }
-	uploadFn := func(a staticPersistence.PostAdder) { uploadCalled = true }
-	clearFn := func(a staticPersistence.PostAdder) { clearCalled = true }
+	uploadFn := func() { uploadCalled = true }
+	clearFn := func() { clearCalled = true }
 
 	if !(addImgCalled && addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
 		t.Error("Expected no function to be executed, but one was")
 	}
 
-	dirpath := os.Getenv("BLOG_DEFAULT_DIR")
-	pa := staticPersistence.NewPostAdder(dirpath)
-	checkFlags(pa, addJsonFn, uploadFn, clearFn, genSiteFn)
+	checkFlags(addJsonFn, uploadFn, clearFn, genSiteFn)
 
 	if !(addImgCalled && addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
 		t.Error("Expected all functions to be executed, but they weren't")
