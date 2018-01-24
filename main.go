@@ -18,6 +18,11 @@ import (
 	"github.com/ingmardrewing/staticPersistence"
 )
 
+// TODO one-stop post adding:
+// only image given -> auto complete text fields
+// only md given -> error
+// image and md given -> autocompose content
+
 var (
 	fimg       = false
 	fjson      = false
