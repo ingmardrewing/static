@@ -153,8 +153,17 @@ func askUserForTitle() (string, string) {
 
 func addJsonFile() {
 	bucket := os.Getenv("AWS_BUCKET")
-	bdg := staticController.NewBlogDataGenerator(bucket, conf.Read("src", "addDir"), conf.Read("src", "postsDir"), conf.Read("defaultContent", "blogExcerpt"))
-	bdg.Generate()
+	addDir := conf.Read("src", "addDir")
+	postsDir := conf.Read("src", "postsDir")
+	defaultExcerpt := conf.Read("defaultContent", "blogExcerpt")
+
+	bda := staticController.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
+	bda.fillDto()
+	dto := bda.getDto()
+
+	filename := fmt.Sprintf("page%d.json", dto.Id())
+
+	staticPersistence.WritePostDtoToJson(dto, postsDir, filename)
 }
 
 /* util */
