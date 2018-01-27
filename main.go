@@ -158,8 +158,7 @@ func addJsonFile() {
 	defaultExcerpt := conf.Read("defaultContent", "blogExcerpt")
 
 	bda := staticController.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
-	bda.fillDto()
-	dto := bda.getDto()
+	dto := bda.GeneratePostDto()
 
 	filename := fmt.Sprintf("page%d.json", dto.Id())
 
