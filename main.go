@@ -23,7 +23,7 @@ import (
 
 var (
 	fimg       = false
-	fjson      = false
+	fadd       = false
 	fmake      = false
 	fstrato    = false
 	fclear     = false
@@ -32,8 +32,7 @@ var (
 )
 
 func init() {
-	flag.BoolVar(&fimg, "img", false, "Generate json from image")
-	flag.BoolVar(&fjson, "json", false, "Generate json")
+	flag.BoolVar(&fadd, "add", false, "Generate json")
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
@@ -47,12 +46,12 @@ func main() {
 }
 
 func flagsPresent() bool {
-	return fimg || fjson || fmake || fstrato || fclear
+	return fadd || fmake || fstrato || fclear
 }
 
 func checkFlags(addJson, upload, clr, genSite func()) {
 	if flagsPresent() {
-		if fjson {
+		if fadd {
 			addJson()
 		}
 		if fmake {
@@ -152,6 +151,7 @@ func askUserForTitle() (string, string) {
 }
 
 func addJsonFile() {
+	fmt.Println("addJsonFile")
 	bucket := os.Getenv("AWS_BUCKET")
 	addDir := conf.Read("src", "addDir")
 	postsDir := conf.Read("src", "postsDir")
