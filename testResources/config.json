@@ -5,7 +5,8 @@
     "addDir": "testResources/src/add/",
     "postsDir": "testResources/src/posts/",
     "marginalDir": "testResources/src/marginal/",
-    "mainPages": "testResources/src/pages/"
+    "mainPages": "testResources/src/pages/",
+    "narrative": "testResources/src/narrative/"
   },
 
   "deploy":{
