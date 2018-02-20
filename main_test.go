@@ -151,9 +151,8 @@ func TestFlagsPresent(t *testing.T) {
 }
 
 func TestCheckFlags(t *testing.T) {
-	fimg, fjson, fmake, fstrato, fclear = true, true, true, true, true
+	fadd, fmake, fstrato, fclear = true, true, true, true
 
-	addImgCalled := false
 	addJsonCalled := false
 	genSiteCalled := false
 	uploadCalled := false
@@ -164,13 +163,13 @@ func TestCheckFlags(t *testing.T) {
 	uploadFn := func() { uploadCalled = true }
 	clearFn := func() { clearCalled = true }
 
-	if !(addImgCalled && addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
+	if !(addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
 		t.Error("Expected no function to be executed, but one was")
 	}
 
 	checkFlags(addJsonFn, uploadFn, clearFn, genSiteFn)
 
-	if !(addImgCalled && addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
+	if !(addJsonCalled && genSiteCalled && uploadCalled && clearCalled) {
 		t.Error("Expected all functions to be executed, but they weren't")
 	}
 }
