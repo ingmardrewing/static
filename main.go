@@ -40,6 +40,10 @@ func init() {
 	conf = staticPersistence.NewConfig(configPath)
 }
 
+func readNewConfig() []staticPersistence.JsonConfig {
+	return staticPersistence.ReadJsonConfig("testResources", "configNew.json")
+}
+
 func main() {
 	checkFlags(addJsonFile, strato, clear, generateSiteLocally)
 	enterInteractiveMode()
