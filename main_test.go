@@ -17,11 +17,11 @@ func TestMain(m *testing.M) {
 }
 
 func setup() {
-	conf = staticPersistence.NewConfig("testResources/config.json")
+	conf = staticPersistence.ReadConfig("testResources/", "configNew.json")
 }
 
 func tearDown() {
-	filepath := path.Join(getTestFileDirPath(), conf.Read("deploy", "localDir"))
+	filepath := path.Join(getTestFileDirPath(), conf[0].Deploy.TargetDir)
 	fs.RemoveDirContents(filepath)
 }
 
@@ -31,7 +31,7 @@ func getTestFileDirPath() string {
 }
 
 func TestReadNewConfig(t *testing.T) {
-	configs := readNewConfig()
+	configs := readConfig()
 
 	actual := configs[0].Domain
 	expected := "drewing.de"
@@ -50,7 +50,7 @@ func TestReadNewConfig(t *testing.T) {
 
 func TestConfRead(t *testing.T) {
 	expected := "styles.css"
-	actual := conf.Read("deploy", "cssFileName")
+	actual := conf[0].Deploy.CssFileName
 
 	if expected != actual {
 		t.Errorf("Expected %s but got %s\n", expected, actual)
@@ -62,7 +62,7 @@ func TestGenSite(t *testing.T) {
 	generateSiteLocally()
 
 	deployDir := path.Join(getTestFileDirPath(),
-		conf.Read("deploy", "localDir"))
+		conf[0].Deploy.TargetDir)
 
 	cssPath := path.Join(deployDir, "styles.css")
 	cssFileExists, _ := fs.PathExists(cssPath)
@@ -90,7 +90,7 @@ func TestGenSite(t *testing.T) {
 
 func TestGeneratePages(t *testing.T) {
 	expected := "styles.css"
-	actual := conf.Read("deploy", "cssFileName")
+	actual := conf[0].Deploy.CssFileName
 
 	if expected != actual {
 		t.Errorf("Expected %s but got %s\n", expected, actual)

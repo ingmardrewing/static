@@ -36,7 +36,8 @@
     "domain": "devabo.de",
     "addPageDir": "testResources/src/add/",
     "src": {
-      "narrative": "testResources/src/narrative/"
+      "narrative": "testResources/src/narrative/",
+      "marginalDir": "testResources/src/marginal/"
     },
     "defaultMeta":{
       "blogExcerpt": "A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
