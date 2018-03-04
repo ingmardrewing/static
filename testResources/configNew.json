@@ -1,0 +1,33 @@
+[
+  {
+    "domain": "drewing.de",
+    "addPostDir": "testResources/src/add/",
+    "src": {
+      "postsDir": "testResources/src/posts/",
+      "marginalDir": "testResources/src/marginal/",
+      "mainPages": "testResources/src/pages/"
+    },
+    "defaultMeta":{
+      "blogExcerpt": "A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
+      "naviPageTitle" : "drewing.de - personal blog of Ingmar Drewing",
+      "naviPageExcerpt": "Personal blog of Ingmar Drewing"
+    },
+    "context": {
+      "twitterHandle": "@ingmardrewing",
+      "topic": "Illustration",
+      "tags": "comic, graphic novel, webcomic, science-fiction, sci-fi",
+      "cardType": "summary_large_image",
+      "section": "article",
+      "disqusShortname": "drewing",
+      "header": [],
+      "footer": []
+    },
+    "deploy":{
+      "targetDir": "testResources/deploy/",
+      "cssFileName": "styles.css",
+      "jsFileName": "logic.js",
+      "blogDir": "blog/",
+      "rss": "/blog/"
+    }
+  }
+]

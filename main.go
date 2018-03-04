@@ -27,8 +27,9 @@ var (
 	fmake      = false
 	fstrato    = false
 	fclear     = false
-	conf       *staticPersistence.Config
-	configPath = "/Users/drewing/Desktop/drewing2018/config.json"
+	conf       []staticPersistence.JsonConfig
+	configPath = "/Users/drewing/Desktop/drewing2018/"
+	configFile = "configNew.json"
 )
 
 func init() {
@@ -37,7 +38,11 @@ func init() {
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
 	flag.Parse()
-	conf = staticPersistence.NewConfig(configPath)
+	conf = readConfig()
+}
+
+func readConfig() []staticPersistence.JsonConfig {
+	return staticPersistence.ReadConfig(configPath, configFile)
 }
 
 func main() {
@@ -68,8 +73,8 @@ func checkFlags(addJson, upload, clr, genSite func()) {
 }
 
 func generateSiteLocally() {
-	sc := staticController.NewSiteController(conf)
-	sc.UpdateStaticSite()
+	sc := staticController.NewSitesController(conf)
+	sc.UpdateStaticSites()
 }
 
 func enterInteractiveMode() {
@@ -153,9 +158,9 @@ func askUserForTitle() (string, string) {
 func addJsonFile() {
 	fmt.Println("addJsonFile")
 	bucket := os.Getenv("AWS_BUCKET")
-	addDir := conf.Read("src", "addDir")
-	postsDir := conf.Read("src", "postsDir")
-	defaultExcerpt := conf.Read("defaultContent", "blogExcerpt")
+	addDir := conf[0].AddPostDir
+	postsDir := conf[0].Src.PostsDir
+	defaultExcerpt := conf[0].DefaultMeta.BlogExcerpt
 
 	bda := staticController.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
 	dto := bda.GeneratePostDto()
