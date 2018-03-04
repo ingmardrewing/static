@@ -27,36 +27,7 @@
       "cssFileName": "styles.css",
       "jsFileName": "logic.js",
       "blogDir": "blog/",
-      "rss": "/blog/rss.rss"
-    }
-  },
-  {
-    "domain": "devabo.de",
-    "addPageDir": "testResources/src/add/",
-    "src": {
-      "narrative": "testResources/src/narrative/",
-      "marginalDir": "testResources/src/marginal/"
-    },
-    "defaultMeta":{
-      "blogExcerpt": "A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
-      "naviPageTitle" : "drewing.de - personal blog of Ingmar Drewing",
-      "naviPageExcerpt": "Personal blog of Ingmar Drewing"
-    },
-    "context": {
-      "twitterHandle": "@ingmardrewing",
-      "topic": "Illustration",
-      "tags": "comic, graphic novel, webcomic, science-fiction, sci-fi",
-      "cardType": "summary_large_image",
-      "section": "article",
-      "disqusShortname": "drewing",
-      "header": [],
-      "footer": []
-    },
-    "deploy":{
-      "targetDir": "testResources/deploy/devabode",
-      "cssFileName": "styles.css",
-      "jsFileName": "logic.js",
-      "rss": "rss.rss"
+      "rss": "/blog/"
     }
   }
 ]
