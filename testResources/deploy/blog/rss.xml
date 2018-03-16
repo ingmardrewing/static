@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>drewing.de</title>
+    <image>
+      <url>https://drewing.de/favicon-32x32.png</url>
+      <title>drewing.de</title>
+      <link>https://drewing.de</link>
+      <width>32</width>
+      <height>32</height>
+      <description>A science-fiction webcomic about the lives of software developers in the far, funny and dystopian future</description>
+    </image>
+	<atom:link href="https://drewing.de/blog/rss.xml" rel="self" type="application/rss+xml" />
+	<link>https://drewing.de/blog/rss.xml</link>
+	<description></description>
+	<lastBuildDate>Tue, 16 Jan 2018 22:33:17 +0100</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>weekly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://github.com/ingmardrewing/static</generator>
+  <item>
+	<title>Female Character</title>
+	<link>https://drewing.de/blog/2018/1/16/female-character/index.html</link>
+	<pubDate>Tue, 16 Jan 2018 22:33:17 +0100</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/2018/1/16/female-character/index.html/index.html</guid>
+	<description><![CDATA[A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.]]></description>
+	<content:encoded><![CDATA[<p><a href="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter.png"><img src="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" alt="" /></a></p>]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test11/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test11/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>A Little Test</title>
+	<link>https://drewing.de/blog/2018/1/13/a-little-test/index.html</link>
+	<pubDate>Sun, 07 Jan 2018 01:50:42 +0100</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/2018/1/13/a-little-test/index.html/index.html</guid>
+	<description><![CDATA[A blog containing texts, drawings, graphic novels and code snippets by Ingmar Drewing.]]></description>
+	<content:encoded><![CDATA[<p><a href="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest.png"><img src="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png" alt="" /></a></p>]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test9/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test9/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test8/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test8/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test7/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test7/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test6/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test6/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test5/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test5/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test4/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test4/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+  <item>
+	<title>test post</title>
+	<link>https://drewing.de/blog/test3/index.html</link>
+	<pubDate>%s</pubDate>
+	<dc:creator><![CDATA[Ingmar Drewing]]></dc:creator>
+	<guid>https://drewing.de/blog/test3/index.html/index.html</guid>
+	<description><![CDATA[test post excerpt]]></description>
+	<content:encoded><![CDATA[test post content]]></content:encoded>
+
+	<media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	<media:content url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" medium="image">
+	  <media:title type="html">https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png</media:title>
+	  <media:thumbnail url="https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png" />
+	</media:content>
+  </item>
+	</channel>
+</rss>
