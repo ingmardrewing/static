@@ -26,8 +26,9 @@
       "targetDir": "testResources/deploy/",
       "cssFileName": "styles.css",
       "jsFileName": "logic.js",
-      "blogDir": "blog/",
-      "rss": "/blog/"
+      "blog": "blog/",
+      "rssPath": "/blog/",
+      "rssFilename": "rss.xml"
     }
   }
 ]
