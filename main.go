@@ -16,11 +16,6 @@ import (
 	"github.com/ingmardrewing/staticPersistence"
 )
 
-// TODO one-stop post adding:
-// only image given -> auto complete text fields
-// only md given -> error
-// image and md given -> autocompose content
-
 var (
 	fimg        = false
 	fadd        = false
@@ -170,8 +165,6 @@ func addJsonFile() {
 
 	staticPersistence.WritePostDtoToJson(dto, postsDir, filename)
 }
-
-/* util */
 
 func newCommand(name string, args ...string) *command {
 	c := new(command)
