@@ -32,7 +32,7 @@ func init() {
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
-	fconfigPath = *flag.String("fconfigPath", "./testResources/", "path to config file")
+	flag.StringVar(&fconfigPath, "configPath", "./testResources/", "path to config file")
 	flag.Parse()
 	conf = readConfig()
 }
