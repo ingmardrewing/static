@@ -39,13 +39,6 @@ func TestReadNewConfig(t *testing.T) {
 	if expected != actual {
 		t.Errorf("Expected %s but got %s\n", expected, actual)
 	}
-
-	actual = configs[1].Domain
-	expected = "devabo.de"
-
-	if expected != actual {
-		t.Errorf("Expected %s but got %s\n", expected, actual)
-	}
 }
 
 func TestConfRead(t *testing.T) {
