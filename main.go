@@ -22,14 +22,14 @@ import (
 // image and md given -> autocompose content
 
 var (
-	fimg       = false
-	fadd       = false
-	fmake      = false
-	fstrato    = false
-	fclear     = false
-	conf       []staticPersistence.JsonConfig
-	configPath = "/Users/drewing/Desktop/drewing2018/"
-	configFile = "configNew.json"
+	fimg        = false
+	fadd        = false
+	fmake       = false
+	fstrato     = false
+	fclear      = false
+	fconfigPath = ""
+	conf        []staticPersistence.JsonConfig
+	configFile  = "configNew.json"
 )
 
 func init() {
@@ -37,12 +37,13 @@ func init() {
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
+	fconfigPath = *flag.String("fconfigPath", "./testResources/", "path to config file")
 	flag.Parse()
 	conf = readConfig()
 }
 
 func readConfig() []staticPersistence.JsonConfig {
-	return staticPersistence.ReadConfig(configPath, configFile)
+	return staticPersistence.ReadConfig(fconfigPath, configFile)
 }
 
 func main() {
