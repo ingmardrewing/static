@@ -16,11 +16,6 @@ import (
 	"github.com/ingmardrewing/staticPersistence"
 )
 
-// TODO one-stop post adding:
-// only image given -> auto complete text fields
-// only md given -> error
-// image and md given -> autocompose content
-
 var (
 	fimg        = false
 	fadd        = false
@@ -37,7 +32,7 @@ func init() {
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
-	fconfigPath = *flag.String("fconfigPath", "./testResources/", "path to config file")
+	flag.StringVar(&fconfigPath, "configPath", "./testResources/", "path to config file")
 	flag.Parse()
 	conf = readConfig()
 }
@@ -170,8 +165,6 @@ func addJsonFile() {
 
 	staticPersistence.WritePostDtoToJson(dto, postsDir, filename)
 }
-
-/* util */
 
 func newCommand(name string, args ...string) *command {
 	c := new(command)
