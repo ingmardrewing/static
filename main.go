@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/ingmardrewing/actions"
+	"github.com/ingmardrewing/staticBlogAdd"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
@@ -158,7 +159,7 @@ func addJsonFile() {
 	postsDir := conf[0].Src.PostsDir
 	defaultExcerpt := conf[0].DefaultMeta.BlogExcerpt
 
-	bda := staticController.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
+	bda := staticBlogAdd.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
 	dto := bda.GeneratePostDto()
 
 	filename := fmt.Sprintf("page%d.json", dto.Id())
