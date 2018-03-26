@@ -16,6 +16,4 @@ script:
   - go test -coverprofile c.out
 after_script:
   - test-reporter after-build --coverage-input-type gocov --exit-code $TRAVIS_TEST_RESULT
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
 
