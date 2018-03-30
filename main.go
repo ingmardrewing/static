@@ -164,7 +164,8 @@ func addJsonFile() {
 
 	filename := fmt.Sprintf("page%d.json", dto.Id())
 
-	staticPersistence.WritePostDtoToJson(dto, postsDir, filename)
+	fmt.Println("Writing ...", dto, postsDir, filename)
+	staticPersistence.WritePageDtoToJson(dto, postsDir, filename)
 }
 
 func newCommand(name string, args ...string) *command {
