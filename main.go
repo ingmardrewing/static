@@ -4,9 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"log"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -18,6 +16,7 @@ import (
 )
 
 var (
+	fi          = false
 	fimg        = false
 	fadd        = false
 	fmake       = false
@@ -26,94 +25,85 @@ var (
 	fconfigPath = ""
 	conf        []staticPersistence.JsonConfig
 	configFile  = "configNew.json"
+
+	addJsonFile         = addJsonFileFn
+	generateSiteLocally = generateSiteLocallyFn
+	upload              = uploadFn
+	clear               = clearFn
+	configureActions    = configureActionsFn
+	checkFlags          = checkFlagsFn
+	interactive         = interactiveFn
 )
 
 func init() {
+	flag.BoolVar(&fi, "i", false, "Interactive mode")
 	flag.BoolVar(&fadd, "add", false, "Generate json")
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
 	flag.StringVar(&fconfigPath, "configPath", "./testResources/", "path to config file")
 	flag.Parse()
-	conf = readConfig()
-}
-
-func readConfig() []staticPersistence.JsonConfig {
-	return staticPersistence.ReadConfig(fconfigPath, configFile)
+	conf = staticPersistence.ReadConfig(fconfigPath, configFile)
 }
 
 func main() {
-	checkFlags(addJsonFile, strato, clear, generateSiteLocally)
-	enterInteractiveMode()
-}
-
-func flagsPresent() bool {
-	return fadd || fmake || fstrato || fclear
-}
-
-func checkFlags(addJson, upload, clr, genSite func()) {
-	if flagsPresent() {
-		if fadd {
-			addJson()
-		}
-		if fmake {
-			genSite()
-		}
-		if fstrato {
-			upload()
-		}
-		if fclear {
-			clr()
-		}
-		os.Exit(0)
+	if fi {
+		interactive()
+	} else {
+		checkFlags()
 	}
 }
 
-func generateSiteLocally() {
+func interactiveFn() {
+	a := configureActions()
+	for {
+		a.AskUser()
+	}
+}
+
+func checkFlagsFn() {
+	if fadd {
+		addJsonFile()
+	}
+	if fmake {
+		generateSiteLocally()
+	}
+	if fstrato {
+		upload()
+	}
+	if fclear {
+		clear()
+	}
+}
+
+func generateSiteLocallyFn() {
 	sc := staticController.NewSitesController(conf)
 	sc.UpdateStaticSites()
 }
 
-func enterInteractiveMode() {
+func configureActionsFn() actions.Choice {
 	c := actions.NewChoice()
 	c.AddAction(
 		"exit",
 		"Exits the Application",
-		func() { os.Exit(0) })
+		exit)
 	c.AddAction(
 		"make",
 		"Generate website locally",
-		func() {
-			generateSiteLocally()
-		})
+		generateSiteLocally)
 	c.AddAction(
 		"json",
 		"Add a json blog file",
-		func() {
-			addJsonFile()
-		})
+		addJsonFile)
 	c.AddAction(
-		"strato",
+		"upload",
 		"Upload generated html, css and js to strato (www.drewing.de)",
-		func() {
-			strato()
-		})
+		upload)
 	c.AddAction(
 		"clear",
 		"clear auto blog dir",
-		func() {
-			clear()
-		})
-
-	for {
-		c.AskUser()
-	}
-}
-
-func strato() {
-	fmt.Println("Uploading content to strato .. may take a while")
-	c := newCommand("blogUpload.pl")
-	c.run()
+		clear)
+	return c
 }
 
 func inferBlogTitleFromFilename(filename string) (string, string) {
@@ -135,7 +125,7 @@ func inferBlogTitlePlain(filename string) string {
 	return strings.ToLower(dashSeparated)
 }
 
-func clear() {
+func clearFn() {
 	c := newCommand("cleardir.pl")
 	c.run()
 }
@@ -143,8 +133,10 @@ func clear() {
 func askUserForTitle() (string, string) {
 	fmt.Println("Enter a title:")
 	reader := bufio.NewReader(os.Stdin)
+
 	title, _ := reader.ReadString('\n')
 	title = strings.TrimSuffix(title, "\n")
+
 	whitespace := regexp.MustCompile("\\s+")
 	preptitle := whitespace.ReplaceAllString(strings.ToLower(title), "-")
 	r := regexp.MustCompile("[^-a-zA-Z0-9]+")
@@ -152,7 +144,7 @@ func askUserForTitle() (string, string) {
 	return title, title_plain
 }
 
-func addJsonFile() {
+func addJsonFileFn() {
 	fmt.Println("addJsonFile")
 	bucket := os.Getenv("AWS_BUCKET")
 	addDir := conf[0].AddPostDir
@@ -168,28 +160,10 @@ func addJsonFile() {
 	staticPersistence.WritePageDtoToJson(dto, postsDir, filename)
 }
 
-func newCommand(name string, args ...string) *command {
-	c := new(command)
-	c.name = name
-	c.setArgs(args...)
-	return c
-}
+func exit() { os.Exit(0) }
 
-type command struct {
-	name      string
-	arguments []string
-}
-
-func (c *command) setArgs(args ...string) {
-	for _, a := range args {
-		c.arguments = append(c.arguments, a)
-	}
-}
-
-func (c *command) run() {
-	err := exec.Command(c.name, c.arguments...).Run()
-	if err != nil {
-		log.Println(c.name, strings.Join(c.arguments, " "))
-		log.Fatalln(err)
-	}
+func uploadFn() {
+	fmt.Println("Uploading content to strato .. may take a while")
+	c := newCommand("blogUpload.pl")
+	c.run()
 }
