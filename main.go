@@ -148,7 +148,7 @@ func addJsonFileFn() {
 	fmt.Println("addJsonFile")
 	bucket := os.Getenv("AWS_BUCKET")
 	addDir := conf[0].AddPostDir
-	postsDir := conf[0].Src.PostsDir
+	postsDir := conf[0].WritePostDir
 	defaultExcerpt := conf[0].DefaultMeta.BlogExcerpt
 
 	bda := staticBlogAdd.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")

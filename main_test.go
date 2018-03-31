@@ -44,8 +44,10 @@ func setup() {
 }
 
 func tearDown() {
-	filepath := path.Join(getTestFileDirPath(), conf[0].Deploy.TargetDir)
-	fs.RemoveDirContents(filepath)
+	/*
+		filepath := path.Join(getTestFileDirPath(), conf[0].Deploy.TargetDir)
+		fs.RemoveDirContents(filepath)
+	*/
 }
 
 func getTestFileDirPath() string {
