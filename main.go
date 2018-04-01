@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"flag"
 	"fmt"
 	"os"
@@ -131,21 +130,12 @@ func clearFn() {
 }
 
 func askUserForTitle() (string, string) {
-	fmt.Println("Enter a title:")
-	reader := bufio.NewReader(os.Stdin)
-
-	title, _ := reader.ReadString('\n')
-	title = strings.TrimSuffix(title, "\n")
-
-	whitespace := regexp.MustCompile("\\s+")
-	preptitle := whitespace.ReplaceAllString(strings.ToLower(title), "-")
-	r := regexp.MustCompile("[^-a-zA-Z0-9]+")
-	title_plain := r.ReplaceAllString(preptitle, "")
-	return title, title_plain
+	i := NewInput("Enter a title:")
+	i.AskUser()
+	return i.Regular(), i.Sanitized()
 }
 
 func addJsonFileFn() {
-	fmt.Println("addJsonFile")
 	bucket := os.Getenv("AWS_BUCKET")
 	addDir := conf[0].AddPostDir
 	postsDir := conf[0].WritePostDir
@@ -156,14 +146,12 @@ func addJsonFileFn() {
 
 	filename := fmt.Sprintf("page%d.json", dto.Id())
 
-	fmt.Println("Writing ...", dto, postsDir, filename)
 	staticPersistence.WritePageDtoToJson(dto, postsDir, filename)
 }
 
 func exit() { os.Exit(0) }
 
 func uploadFn() {
-	fmt.Println("Uploading content to strato .. may take a while")
 	c := newCommand("blogUpload.pl")
 	c.run()
 }
