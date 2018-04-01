@@ -2,14 +2,12 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 
 	"github.com/ingmardrewing/actions"
-	"github.com/ingmardrewing/staticBlogAdd"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
@@ -136,17 +134,9 @@ func askUserForTitle() (string, string) {
 }
 
 func addJsonFileFn() {
-	bucket := os.Getenv("AWS_BUCKET")
-	addDir := conf[0].AddPostDir
-	postsDir := conf[0].WritePostDir
-	defaultExcerpt := conf[0].DefaultMeta.BlogExcerpt
-
-	bda := staticBlogAdd.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
-	dto := bda.GeneratePostDto()
-
-	filename := fmt.Sprintf("page%d.json", dto.Id())
-
-	staticPersistence.WritePageDtoToJson(dto, postsDir, filename)
+	aj := NewAddJson("AWS_BUCKET", conf[0].AddPostDir, conf[0].WritePostDir, conf[0].DefaultMeta.BlogExcerpt, "https://drewing.de/blog/")
+	aj.GenerateDto()
+	aj.WriteToFs()
 }
 
 func exit() { os.Exit(0) }
