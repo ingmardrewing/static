@@ -1,16 +1,13 @@
 package main
 
 import (
-	"bufio"
 	"flag"
-	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 
 	"github.com/ingmardrewing/actions"
-	"github.com/ingmardrewing/staticBlogAdd"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
@@ -131,39 +128,20 @@ func clearFn() {
 }
 
 func askUserForTitle() (string, string) {
-	fmt.Println("Enter a title:")
-	reader := bufio.NewReader(os.Stdin)
-
-	title, _ := reader.ReadString('\n')
-	title = strings.TrimSuffix(title, "\n")
-
-	whitespace := regexp.MustCompile("\\s+")
-	preptitle := whitespace.ReplaceAllString(strings.ToLower(title), "-")
-	r := regexp.MustCompile("[^-a-zA-Z0-9]+")
-	title_plain := r.ReplaceAllString(preptitle, "")
-	return title, title_plain
+	i := NewInput("Enter a title:")
+	i.AskUser()
+	return i.Regular(), i.Sanitized()
 }
 
 func addJsonFileFn() {
-	fmt.Println("addJsonFile")
-	bucket := os.Getenv("AWS_BUCKET")
-	addDir := conf[0].AddPostDir
-	postsDir := conf[0].WritePostDir
-	defaultExcerpt := conf[0].DefaultMeta.BlogExcerpt
-
-	bda := staticBlogAdd.NewBlogDataAbstractor(bucket, addDir, postsDir, defaultExcerpt, "https://drewing.de/blog/")
-	dto := bda.GeneratePostDto()
-
-	filename := fmt.Sprintf("page%d.json", dto.Id())
-
-	fmt.Println("Writing ...", dto, postsDir, filename)
-	staticPersistence.WritePageDtoToJson(dto, postsDir, filename)
+	aj := NewAddJson("AWS_BUCKET", conf[0].AddPostDir, conf[0].WritePostDir, conf[0].DefaultMeta.BlogExcerpt, "https://drewing.de/blog/")
+	aj.GenerateDto()
+	aj.WriteToFs()
 }
 
 func exit() { os.Exit(0) }
 
 func uploadFn() {
-	fmt.Println("Uploading content to strato .. may take a while")
 	c := newCommand("blogUpload.pl")
 	c.run()
 }
