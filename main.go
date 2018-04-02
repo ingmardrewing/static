@@ -30,6 +30,7 @@ var (
 	configureActions    = configureActionsFn
 	checkFlags          = checkFlagsFn
 	interactive         = interactiveFn
+	exit                = func() { os.Exit(0) }
 )
 
 func init() {
@@ -138,8 +139,6 @@ func addJsonFileFn() {
 	aj.GenerateDto()
 	aj.WriteToFs()
 }
-
-func exit() { os.Exit(0) }
 
 func uploadFn() {
 	c := newCommand("blogUpload.pl")
