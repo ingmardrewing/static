@@ -38,7 +38,8 @@ func TestWriteToFs(t *testing.T) {
 		"pathValue",
 		"fspathValue",
 		"htmlfilenameValue",
-		"thumbBase64Value")
+		"thumbBase64Value",
+		"categoryValue")
 
 	envName := "TEST_AWS_BUCKET"
 	bucketName := "testBucketName"
