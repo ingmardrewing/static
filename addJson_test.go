@@ -56,7 +56,7 @@ func TestWriteToFs(t *testing.T) {
 	ba := fs.ReadByteArrayFromFile("testResources/deploy/page42.json")
 
 	actual := len(ba)
-	expected := 345
+	expected := 375
 
 	if actual != expected {
 		t.Error("Expected byte array to be of length", expected, "but it was", actual)
