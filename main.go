@@ -12,6 +12,7 @@ import (
 	curl "github.com/ingmardrewing/gomicSocMedCurl"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
+	log "github.com/sirupsen/logrus"
 )
 
 var (
@@ -49,6 +50,7 @@ func init() {
 }
 
 func main() {
+	log.SetLevel(log.DebugLevel)
 	if fi {
 		interactive()
 	} else {
