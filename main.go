@@ -2,12 +2,14 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 
 	"github.com/ingmardrewing/actions"
+	curl "github.com/ingmardrewing/gomicSocMedCurl"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 )
@@ -19,6 +21,7 @@ var (
 	fmake       = false
 	fstrato     = false
 	fclear      = false
+	fcurl       = false
 	fconfigPath = ""
 	conf        []staticPersistence.JsonConfig
 	configFile  = "configNew.json"
@@ -39,6 +42,7 @@ func init() {
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
+	flag.BoolVar(&fcurl, "curl", false, "")
 	flag.StringVar(&fconfigPath, "configPath", "./testResources/", "path to config file")
 	flag.Parse()
 	conf = staticPersistence.ReadConfig(fconfigPath, configFile)
@@ -138,6 +142,13 @@ func addJsonFileFn() {
 	aj := NewAddJson("AWS_BUCKET", conf[0].AddPostDir, conf[0].WritePostDir, conf[0].DefaultMeta.BlogExcerpt, "https://drewing.de/blog/")
 	aj.GenerateDto()
 	aj.WriteToFs()
+
+	if fcurl {
+		title, desc, link, imgUrl := aj.CurlData()
+		tagsCsv := strings.Join(curl.TAGS, ",")
+		cmd := curl.Command(title, desc, link, imgUrl, tagsCsv)
+		fmt.Println(cmd)
+	}
 }
 
 func uploadFn() {

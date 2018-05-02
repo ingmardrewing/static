@@ -37,3 +37,7 @@ func (a *addJson) WriteToFs() {
 	filename := fmt.Sprintf("page%d.json", a.dto.Id())
 	staticPersistence.WritePageDtoToJson(a.dto, a.destDir, filename)
 }
+
+func (a *addJson) CurlData() (string, string, string, string) {
+	return a.dto.Title(), a.dto.Description(), a.dto.Url(), a.dto.ImageUrl()
+}
