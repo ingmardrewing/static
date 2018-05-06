@@ -46,11 +46,21 @@ func init() {
 	flag.BoolVar(&fcurl, "curl", false, "")
 	flag.StringVar(&fconfigPath, "configPath", "./testResources/", "path to config file")
 	flag.Parse()
+
+	log.SetLevel(log.DebugLevel)
+	if fconfigPath == "./testResources/" {
+		envDir := os.Getenv("BLOG_CONFIG_DIR")
+		log.Debug("reading config dir from env:", envDir)
+		fconfigPath = envDir
+	}
+
+	log.Debug("config dir:", fconfigPath)
+	log.Debug("config file:", fconfigPath)
+
 	conf = staticPersistence.ReadConfig(fconfigPath, configFile)
 }
 
 func main() {
-	log.SetLevel(log.DebugLevel)
 	if fi {
 		interactive()
 	} else {
