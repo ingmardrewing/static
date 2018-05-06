@@ -44,13 +44,17 @@ func init() {
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
 	flag.BoolVar(&fcurl, "curl", false, "")
-	flag.StringVar(&fconfigPath, "configPath", "./testResources/", "path to config file")
+	flag.StringVar(&fconfigPath, "configPath", os.Getenv("BLOG_CONFIG_DIR"), "path to config file")
 	flag.Parse()
+
+	log.SetLevel(log.DebugLevel)
+	log.Debug("config dir:", fconfigPath)
+	log.Debug("config file:", fconfigPath)
+
 	conf = staticPersistence.ReadConfig(fconfigPath, configFile)
 }
 
 func main() {
-	log.SetLevel(log.DebugLevel)
 	if fi {
 		interactive()
 	} else {
