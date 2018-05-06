@@ -4,11 +4,13 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path"
 	"path/filepath"
 	"regexp"
 	"strings"
 
 	"github.com/ingmardrewing/actions"
+	"github.com/ingmardrewing/fs"
 	curl "github.com/ingmardrewing/gomicSocMedCurl"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
@@ -50,8 +52,10 @@ func init() {
 	log.SetLevel(log.DebugLevel)
 	log.Debug("config dir:", fconfigPath)
 	log.Debug("config file:", fconfigPath)
-
-	conf = staticPersistence.ReadConfig(fconfigPath, configFile)
+	exists, _ := fs.PathExists(path.Join(fconfigPath, configFile))
+	if exists {
+		conf = staticPersistence.ReadConfig(fconfigPath, configFile)
+	}
 }
 
 func main() {
