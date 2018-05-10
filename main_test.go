@@ -69,12 +69,6 @@ func TestConfigureActions(t *testing.T) {
 		t.Error("Expected action using generateSiteLocally, but it doesn't.")
 	}
 
-	actionFunction = findActionByName("json", as).GetFunction()
-	fn = addJsonFile
-	if &actionFunction == &fn {
-		t.Error("Expected action using addJsonFile, but it doesn't.")
-	}
-
 	actionFunction = findActionByName("upload", as).GetFunction()
 	fn = upload
 	if &actionFunction == &fn {
@@ -186,17 +180,16 @@ func TestInferBlogTitlePlain(t *testing.T) {
 }
 
 func TestCheckFlags(t *testing.T) {
-	fadd, fmake, fstrato, fclear = true, true, true, true
-	a, b, c, d := false, false, false, false
+	fmake, fstrato, fclear = true, true, true
+	b, c, d := false, false, false
 
-	addJsonFile = func() { a = true }
 	generateSiteLocally = func() { b = true }
 	upload = func() { c = true }
 	clear = func() { d = true }
 
 	checkFlagsFn()
 
-	if !(a && b && c && d) {
+	if !(b && c && d) {
 		t.Error("checkFlags did not trigger all expected functions.")
 	}
 }

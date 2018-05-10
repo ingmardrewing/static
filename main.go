@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"os"
 	"path"
 	"path/filepath"
@@ -11,7 +10,6 @@ import (
 
 	"github.com/ingmardrewing/actions"
 	"github.com/ingmardrewing/fs"
-	curl "github.com/ingmardrewing/gomicSocMedCurl"
 	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 	log "github.com/sirupsen/logrus"
@@ -24,12 +22,10 @@ var (
 	fmake       = false
 	fstrato     = false
 	fclear      = false
-	fcurl       = false
 	fconfigPath = ""
 	conf        []staticPersistence.JsonConfig
 	configFile  = "configNew.json"
 
-	addJsonFile         = addJsonFileFn
 	generateSiteLocally = generateSiteLocallyFn
 	upload              = uploadFn
 	clear               = clearFn
@@ -41,20 +37,21 @@ var (
 
 func init() {
 	flag.BoolVar(&fi, "i", false, "Interactive mode")
-	flag.BoolVar(&fadd, "add", false, "Generate json")
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
-	flag.BoolVar(&fcurl, "curl", false, "")
 	flag.StringVar(&fconfigPath, "configPath", os.Getenv("BLOG_CONFIG_DIR"), "path to config file")
 	flag.Parse()
 
 	log.SetLevel(log.DebugLevel)
 	log.Debug("config dir:", fconfigPath)
 	log.Debug("config file:", fconfigPath)
+
 	exists, _ := fs.PathExists(path.Join(fconfigPath, configFile))
 	if exists {
 		conf = staticPersistence.ReadConfig(fconfigPath, configFile)
+	} else {
+		conf = staticPersistence.ReadConfig("./testResources/", configFile)
 	}
 }
 
@@ -74,9 +71,6 @@ func interactiveFn() {
 }
 
 func checkFlagsFn() {
-	if fadd {
-		addJsonFile()
-	}
 	if fmake {
 		generateSiteLocally()
 	}
@@ -103,10 +97,6 @@ func configureActionsFn() actions.Choice {
 		"make",
 		"Generate website locally",
 		generateSiteLocally)
-	c.AddAction(
-		"json",
-		"Add a json blog file",
-		addJsonFile)
 	c.AddAction(
 		"upload",
 		"Upload generated html, css and js to strato (www.drewing.de)",
@@ -146,19 +136,6 @@ func askUserForTitle() (string, string) {
 	i := NewInput("Enter a title:")
 	i.AskUser()
 	return i.Regular(), i.Sanitized()
-}
-
-func addJsonFileFn() {
-	aj := NewAddJson("AWS_BUCKET", conf[0].AddPostDir, conf[0].WritePostDir, conf[0].DefaultMeta.BlogExcerpt, "https://drewing.de/blog/")
-	aj.GenerateDto()
-	aj.WriteToFs()
-
-	if fcurl {
-		title, desc, link, imgUrl := aj.CurlData()
-		tagsCsv := strings.Join(curl.TAGS, ",")
-		cmd := curl.Command(title, desc, link, imgUrl, tagsCsv)
-		fmt.Println(cmd)
-	}
 }
 
 func uploadFn() {
