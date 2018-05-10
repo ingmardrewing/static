@@ -49,7 +49,7 @@ func init() {
 	flag.StringVar(&fconfigPath, "configPath", os.Getenv("BLOG_CONFIG_DIR"), "path to config file")
 	flag.Parse()
 
-	log.SetLevel(log.DebugLevel)
+	log.SetLevel(log.ErrorLevel)
 	log.Debug("config dir:", fconfigPath)
 	log.Debug("config file:", fconfigPath)
 	exists, _ := fs.PathExists(path.Join(fconfigPath, configFile))
