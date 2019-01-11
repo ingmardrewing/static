@@ -83,6 +83,8 @@ func checkFlagsFn() {
 }
 
 func generateSiteLocallyFn() {
+	log.Debug("main:generateSiteLocallyFn")
+	log.Debug(conf)
 	sc := staticController.NewSitesController(conf)
 	sc.UpdateStaticSites()
 }
