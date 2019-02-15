@@ -25,6 +25,7 @@ var (
 	fconfigPath = ""
 	conf        []staticPersistence.JsonConfig
 	configFile  = "configNew.json"
+	debug       = false
 
 	generateSiteLocally = generateSiteLocallyFn
 	upload              = uploadFn
@@ -37,13 +38,19 @@ var (
 
 func init() {
 	flag.BoolVar(&fi, "i", false, "Interactive mode")
+	flag.BoolVar(&debug, "debug", false, "Run in debug mode")
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
 	flag.StringVar(&fconfigPath, "configPath", os.Getenv("BLOG_CONFIG_DIR"), "path to config file")
 	flag.Parse()
 
-	log.SetLevel(log.ErrorLevel)
+	if debug {
+		log.SetLevel(log.DebugLevel)
+	} else {
+		log.SetLevel(log.ErrorLevel)
+	}
+
 	log.Debug("config dir:", fconfigPath)
 	log.Debug("config file:", fconfigPath)
 
