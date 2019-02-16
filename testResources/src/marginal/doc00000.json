@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"",
-	"postImg":"",
+	"version":2,
 	"filename":"about.html",
-	"id":20,
-	"date":"01.01.2007",
-	"url":"http://localhost/",
-	"title":"Me",
-	"title_plain":"Me",
-	"excerpt":"test  about description",
-	"content":"test about content",
-	"dsq_thread_id":"",
-	"thumbBase64":"",
+	"path_from_doc_root":"/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2017-01-19",
+	"title":"about",
+	"title_plain":"about",
+	"excerpt":"<p>Hello there! Just because I&#8217;ve been asked this several times: the name &#8220;Drewing&#8221; is actually my real family name. As far as I know the name is derived from &#8220;Andreas&#8221; or &#8220;Andrew&#8221; and, at some point in time, stuck to one of my ancestors &#8211; who lived - with a short intermezzo - in Germany. I am working as a [&hellip;]</p>",
+	"content":"<p>This is the personal blog of Ingmar Drewing.</p><p>I am working as a software developer. Prior to that I&#8217;ve been founding and running FAZIT:DESIGN, Wiesbaden (Germany) for 5 years.</p><p>Apart from drawing, writing and programming I&#8217;ve been lecturing at the following universities in Germany:</p><ul><li><a title=\"Website der Hochschule RheinMain, Fachbereich DCSM\" href=\"http://www.hs-rm.de/dcsm/startseite/index.html\" target=\"_self\">University of Applied Sciences, Wiesbaden</a></li><li><a href=\"https://www.hs-harz.de/en/\">Harz University of Applied Sciences</a></li><li><a href=\"https://www.hs-mainz.de/\">Hochschule Mainz, University of Applied Sciences</a></li></ul><p>Join my network at <a title=\"Linkedin - Ingmar Drewing\" href=\"http://www.linkedin.com/in/ingmardrewing\">Linkedin</a> or <a title=\"Ingmar Drewing at Xing\" href=\"https://www.xing.com/profile/Ingmar_Drewing\">Xing</a> or follow me on <a href=\"http://twitter.com/ingmardrewing\">twitter</a>.</p><p>Ich arbeite derzeit in Wiesbaden als Software-Entwickler.<br />Zuvor war ich über fünf Jahre gleichberechtigter Partner der FAZIT:DESIGN, Wiesbaden, deren Gründer ich bin.<br />Ich hatte bisher verschiedene Lehraufträge im Bereich Programmierung und Zeichnung an der <a title=\"Website der Hochschule RheinMain, Fachbereich DCSM\" href=\"http://www.hs-rm.de/dcsm/startseite/index.html\" target=\"_self\">Hochschule RheinMain (früher: FH Wiesbaden)</a>, <a href=\"https://www.hs-harz.de\">Hochschule Harz</a> und an der <a href=\"https://www.hs-mainz.de/\">Hochschule Mainz</a>.</p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"about","w_190":"","w_390":"","w_800":"","max_resolution":""}]
 }

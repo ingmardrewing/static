@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":10341,
-	"date":"2018-1-16 22:33:17",
-	"url":"https://drewing.de/blog/2018/1/16/female-character/",
-	"title":"Female Character",
-	"title_plain":"female-character",
-	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
-	"content":"<p><a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png\" alt=\"\" /></a></p>",
-	"dsq_thread_id":"drewing.de 2018/1/16/Female Character",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/11/02/nightly-sketch-nr-7/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-11-02",
+	"title":"Nightly Sketch Nr. 7",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>Alea &#8230; ah, never mind.</p><div id=\"attachment_477\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07.jpg\"><img class=\"size-large wp-image-477\" title=\"nightlysketch07\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07-1024x723.jpg\" alt=\"Nightly Sketch Nr. 7\" width=\"490\" height=\"345\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07-1024x723.jpg 1024w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 7</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a>.</p><p><!-- Social Bookmarks BEGIN --><a><strong><em> </em></strong></a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Nightly Sketch Nr. 7","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch07.jpg","max_resolution":""}]
 }

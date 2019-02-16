@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":10339,
-	"date":"2018-1-7 1:50:42",
-	"url":"https://drewing.de/blog/2018/1/13/a-little-test/",
-	"title":"A Little Test",
-	"title_plain":"a-little-test",
-	"excerpt":"A blog containing texts, drawings, graphic novels and code snippets by Ingmar Drewing.",
-	"content":"<p><a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/13/ALittleTest-w800.png\" alt=\"\" /></a></p>",
-	"dsq_thread_id":"drewing.de 2018/1/13/A Little Test",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/10/30/nightly-sketch-nr-4/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-10-30",
+	"title":"Nightly Sketch Nr. 4",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>Knock, knock.</p><div id=\"attachment_457\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04.jpg\"><img class=\"size-large wp-image-457\" title=\"nightlysketch04\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04-1024x723.jpg\" alt=\"Nightly Sketch Nr. 4\" width=\"490\" height=\"345\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04-1024x723.jpg 1024w, https://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 4</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a>.</p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Nightly Sketch Nr. 4","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch04.jpg","max_resolution":""}]
 }

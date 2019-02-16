@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":1,
-	"date":"%s",
-	"url":"http://localhost/blog/test3/",
-	"title":"test post",
-	"title_plain":"test_post",
-	"excerpt":"test post excerpt",
-	"content":"test post content",
-	"dsq_thread_id":"test post dsq id",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/07/25/bio-fuelled-mission-to-mars/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-07-25",
+	"title":"Bio-Fuelled Mission to Mars",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>During todays press conference inside the NASA headquarter speakers confirmed the ongoing rumors about a biological propulsion engine.</p><p>&#8220;We realised that we are not only responsible for having fun shooting things into the sky while polluting the orbit with toolboxes, but also for the ongoing wellfare of our homeworld. Although the usual hydrogene burning is rather clean, we decided that it&#8217;s about time to try a new approach to space travel.&#8221; chief engineneer Wutswag Nihupdhag explained. &#8220;The new engine is a hybrid using part of the biomass provided by the astronauts and improving it&#8217;s energetic value through a complex  chemical process.&#8221;</p><p>According to Mr. Nihupdhag the development team sucessfully testet a prototype last week. &#8220;Estimates are, that a mission to the moon may be launched around 2022. We&#8217;ll need that as a test run before we send our crew to the red planet, since we cannot forsee the long-term olfactory impact on a psychological level.&#8221;</p><div id=\"attachment_232\" style=\"width: 310px\" class=\"wp-caption alignnone\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/07/bio_fuelled_mars_mission.jpg\"><img class=\"size-full wp-image-232\" title=\"bio_fuelled_mars_mission\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/07/bio_fuelled_mars_mission.jpg\" alt=\"concept for bio fuelled mars orbiter\" width=\"300\" height=\"510\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/07/bio_fuelled_mars_mission.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/07/bio_fuelled_mars_mission-176x300.jpg 176w\" sizes=\"(max-width: 300px) 100vw, 300px\" /></a><p class=\"wp-caption-text\">concept for bio fuelled mars orbiter</p></div>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Bio-Fuelled Mission to Mars","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/07/bio_fuelled_mars_mission.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/07/bio_fuelled_mars_mission.jpg","max_resolution":""}]
 }

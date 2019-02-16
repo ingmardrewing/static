@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":1,
-	"date":"%s",
-	"url":"http://localhost/blog/test4/",
-	"title":"test post",
-	"title_plain":"test_post",
-	"excerpt":"test post excerpt",
-	"content":"test post content",
-	"dsq_thread_id":"test post dsq id",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/08/18/working-2-0/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-08-18",
+	"title":"Working 2.0",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>Mruosdi Phlpandu, lead developer at Wrundapanda Inc., Delhi, sees a way to get rid of the costly development of ergonomically optimised workspaces. &#8220;Thanks to the rapid technological progress in genetic engineering as well as computer science, we&#8217;ll soon see a revolution in HR and the culture of working in general&#8221;, he claims.</p><p>While businesses traditionally needed to adapt workspaces to the &#8220;pathetic needs of employees&#8221; Mr. Phlpandu aims at adapting the workforce to fit the machinery. Mr. Phlpandu has serveral years of  experience with different prototypes (of which you might have met one or two during the dot com era) and is definitely looking forward to get his &#8220;employee upgrading service&#8221; to the market soon.</p><div id=\"attachment_286\" style=\"width: 310px\" class=\"wp-caption alignnone\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/08/working_2.0.jpg\"><img class=\"size-medium wp-image-286 \" title=\"Working 2.0\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/08/working_2.0-300x277.jpg\" alt=\"Optimised human resources about to be improving efficiency around the globe\" width=\"300\" height=\"277\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/08/working_2.0-300x277.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/08/working_2.0.jpg 600w\" sizes=\"(max-width: 300px) 100vw, 300px\" /></a><p class=\"wp-caption-text\">Ergonomically undemanding employees are about to improve efficiency around the globe</p></div>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Working 2.0","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/08/working_2.0.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/08/working_2.0.jpg","max_resolution":""}]
 }

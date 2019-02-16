@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"",
-	"postImg":"",
-	"filename":"imprint.html",
-	"id":30,
-	"date":"01.01.2007",
-	"url":"http://localhost",
-	"title":"imprint",
-	"title_plain":"imprint",
-	"excerpt":"test imprint description",
-	"content":"test imprint content",
-	"dsq_thread_id":"",
-	"thumbBase64":"",
+	"version":2,
+	"filename":"contact.html",
+	"path_from_doc_root":"/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2013-10-05",
+	"title":"Contact",
+	"title_plain":"Contact",
+	"excerpt":"Contact details of the author",
+	"content":"<p>If you want to get in touch with me:<br /><br />Ingmar Drewing<br />Schulberg 8<br />D-65183 Wiesbaden<br /><br >E-Mail: ingmar [at] drewing [dot] de<br />Twitter: <a href=\"https://twitter.com/ingmardrewing\">@ingmardrewing</a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Contact","w_190":"","w_390":"","w_800":"","max_resolution":""}]
 }

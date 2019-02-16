@@ -9,6 +9,7 @@ import (
 	"github.com/ingmardrewing/actions"
 	"github.com/ingmardrewing/fs"
 	"github.com/ingmardrewing/staticPersistence"
+	log "github.com/sirupsen/logrus"
 )
 
 func TestMain(m *testing.M) {
@@ -41,6 +42,7 @@ func TestMainInternals(t *testing.T) {
 
 func setup() {
 	conf = staticPersistence.ReadConfig("testResources/", "configNew.json")
+	log.SetLevel(log.DebugLevel)
 }
 
 func tearDown() {
