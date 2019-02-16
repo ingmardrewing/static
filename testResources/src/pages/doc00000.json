@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":1,
-	"date":"%s",
-	"url":"http://localhost/blog/test1/",
-	"title":"test post",
-	"title_plain":"test_post",
-	"excerpt":"test post excerpt",
-	"content":"test post content",
-	"dsq_thread_id":"test post dsq id",
-	"thumbBase64":"",
+	"path_from_doc_root":"/portfolio/2017/02/05/maria-mit-dem-helm/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2017-02-05",
+	"title":"Maria mit dem Helm",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p><a href=\"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1.png\"><img src=\"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1-800x800.png\" alt=\"\" width=\"800\" height=\"800\" class=\"alignleft size-medium wp-image-5806\" srcset=\"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1-800x800.png 800w, https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1-400x400.png 400w\" sizes=\"(max-width: 800px) 100vw, 800px\" /></a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Maria mit dem Helm","w_190":"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1-190x190.png","w_390":"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1.png","w_800":"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/02/06002836/maria_mit_dem_helm1-800x800.png","max_resolution":""}]
 }

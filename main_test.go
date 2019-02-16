@@ -9,6 +9,7 @@ import (
 	"github.com/ingmardrewing/actions"
 	"github.com/ingmardrewing/fs"
 	"github.com/ingmardrewing/staticPersistence"
+	log "github.com/sirupsen/logrus"
 )
 
 func TestMain(m *testing.M) {
@@ -41,6 +42,7 @@ func TestMainInternals(t *testing.T) {
 
 func setup() {
 	conf = staticPersistence.ReadConfig("testResources/", "configNew.json")
+	log.SetLevel(log.DebugLevel)
 }
 
 func tearDown() {
@@ -122,12 +124,14 @@ func TestGenSite(t *testing.T) {
 		t.Error("No index.html file found at:", indexPath)
 	}
 
-	index0Path := path.Join(deployDir, "blog", "index0.html")
-	index0Exists, _ := fs.PathExists(index0Path)
+	/*
+		index0Path := path.Join(deployDir, "blog", "index0.html")
+		index0Exists, _ := fs.PathExists(index0Path)
 
-	if !index0Exists {
-		t.Error("No index0.html file found at:", index0Path)
-	}
+			if !index0Exists {
+				t.Error("No index0.html file found at:", index0Path)
+			}
+	*/
 
 	tearDown()
 }

@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":1,
-	"date":"%s",
-	"url":"http://localhost/blog/test11/",
-	"title":"test post",
-	"title_plain":"test_post",
-	"excerpt":"test post excerpt",
-	"content":"test post content",
-	"dsq_thread_id":"test post dsq id",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/10/31/nightly-sketch-nr-5/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-10-31",
+	"title":"Nightly Sketch Nr. 5",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>Animals and cannibals.</p><div id=\"attachment_464\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05.jpg\"><img class=\"size-large wp-image-464\" title=\"nightlysketch05\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05-1024x723.jpg\" alt=\"Nightly Sketch Nr. 5\" width=\"490\" height=\"345\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05-1024x723.jpg 1024w, https://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 5</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a>.</p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Nightly Sketch Nr. 5","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/10/nightlysketch05.jpg","max_resolution":""}]
 }

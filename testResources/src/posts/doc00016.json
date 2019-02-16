@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/9/colorstudy3-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/9/colorstudy3-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":346,
-	"date":"2018-2-9 0:9:21",
-	"url":"https://drewing.de/blog/2018/2/9/colorstudy-3/",
-	"title":"Colorstudy 3",
-	"title_plain":"colorstudy-3",
-	"excerpt":"",
-	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/9/colorstudy3.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/9/colorstudy3-w800.png\" width=\"800\"></a>",
-	"dsq_thread_id":"1000346 https://drewing.de/blog/2018/2/9/colorstudy-3",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/11/08/nightly-sketch-nr-13/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-11-08",
+	"title":"Nightly Sketch Nr. 13",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>Trench warfare</p><div id=\"attachment_525\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13.jpg\"><img class=\"size-large wp-image-525\" title=\"nightlysketch13\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13-1024x723.jpg\" alt=\"Nightly Sketch Nr. 13\" width=\"490\" height=\"345\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13-1024x723.jpg 1024w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 13</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Nightly Sketch Nr. 13","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch13.jpg","max_resolution":""}]
 }

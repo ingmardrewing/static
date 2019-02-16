@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/7/colorstudy2-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/7/colorstudy2-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":345,
-	"date":"2018-2-7 23:10:44",
-	"url":"https://drewing.de/blog/2018/2/7/colorstudy-2/",
-	"title":"Colorstudy 2",
-	"title_plain":"colorstudy-2",
-	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
-	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog%2F2018%2F2%2F7%2Fcolorstudy2.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/7/colorstudy2-w800.png\" width=\"800\"></a>",
-	"dsq_thread_id":"1000345 https://drewing.de/blog/2018/2/7/colorstudy-2",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/11/07/nightly-sketch-nr-12/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-11-07",
+	"title":"Nightly Sketch Nr. 12",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>La vie dans la forêt</p><div id=\"attachment_520\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12.jpg\"><img class=\"size-large wp-image-520\" title=\"nightlysketch12\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12-1024x723.jpg\" alt=\"Nightly Sketch Nr. 12\" width=\"490\" height=\"345\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12-1024x723.jpg 1024w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 12</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Nightly Sketch Nr. 12","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch12.jpg","max_resolution":""}]
 }

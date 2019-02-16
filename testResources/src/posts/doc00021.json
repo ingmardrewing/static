@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/3/7/sketch-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/3/7/sketch-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":351,
-	"date":"2018-3-7 0:34:41",
-	"url":"https://drewing.de/blog/2018/3/7/sketch/",
-	"title":"Sketch",
-	"title_plain":"sketch",
-	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
-	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/3/7/sketch.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/3/7/sketch-w800.png\" width=\"800\"></a>",
-	"dsq_thread_id":"1000351 https://drewing.de/blog/2018/3/7/sketch",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/11/22/balloons/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-11-22",
+	"title":"Balloons",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>The lighter they are, <a title=\"Wikipedia: The Dilbert Principle\" href=\"http://en.wikipedia.org/wiki/The_Dilbert_Principle\">the easier they ascend</a></p><div id=\"attachment_646\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27.jpg\"><img class=\"size-large wp-image-646\" title=\"nightlysketch27\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27-490x346.jpg\" alt=\"Nightly Sketch Nr. 27\" width=\"490\" height=\"346\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27-490x346.jpg 490w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 27</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Balloons","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch27.jpg","max_resolution":""}]
 }

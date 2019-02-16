@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":1,
-	"date":"%s",
-	"url":"http://localhost/blog/test6/",
-	"title":"test post",
-	"title_plain":"test_post",
-	"excerpt":"test post excerpt",
-	"content":"test post content",
-	"dsq_thread_id":"test post dsq id",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/10/20/the-troubles-without-television/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-10-20",
+	"title":"The Troubles Without Television",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<div id=\"attachment_408\" style=\"width: 410px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/boring_channel1.jpg\"><img class=\"size-full wp-image-408\" title=\"boring_channel\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/boring_channel1.jpg\" alt=\"Reality TV\" width=\"400\" height=\"249\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/10/boring_channel1.jpg 400w, https://www.drewing.de/blog/wp-content/uploads/2009/10/boring_channel1-300x186.jpg 300w\" sizes=\"(max-width: 400px) 100vw, 400px\" /></a><p class=\"wp-caption-text\">Reality TV</p></div><p style=\"text-align: center;\">",
+	"thumb_base64":"",
+	"images_urls":[{"title":"The Troubles Without Television","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/10/boring_channel1.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/10/boring_channel1.jpg","max_resolution":""}]
 }

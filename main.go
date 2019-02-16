@@ -20,6 +20,7 @@ var (
 	fimg        = false
 	fadd        = false
 	fmake       = false
+	fupdatejson = false
 	fstrato     = false
 	fclear      = false
 	fconfigPath = ""
@@ -40,6 +41,7 @@ func init() {
 	flag.BoolVar(&fi, "i", false, "Interactive mode")
 	flag.BoolVar(&debug, "debug", false, "Run in debug mode")
 	flag.BoolVar(&fmake, "make", false, "Generate local site")
+	flag.BoolVar(&fupdatejson, "updatejson", false, "Updates to new json format")
 	flag.BoolVar(&fstrato, "strato", false, "Upload site to strato")
 	flag.BoolVar(&fclear, "clear", false, "Automatically publish the image in BLOG_DEFAULT_DIR and clear the dir afterwards")
 	flag.StringVar(&fconfigPath, "configPath", os.Getenv("BLOG_CONFIG_DIR"), "path to config file")
@@ -81,6 +83,9 @@ func checkFlagsFn() {
 	if fmake {
 		generateSiteLocally()
 	}
+	if fupdatejson {
+		updateJsonFiles()
+	}
 	if fstrato {
 		upload()
 	}
@@ -94,6 +99,12 @@ func generateSiteLocallyFn() {
 	log.Debug(conf)
 	sc := staticController.NewSitesController(conf)
 	sc.UpdateStaticSites()
+}
+
+func updateJsonFiles() {
+	log.Debug("main:updateJsonFiles")
+	sc := staticController.NewSitesController(conf)
+	sc.UpdateJsonFiles()
 }
 
 func configureActionsFn() actions.Choice {

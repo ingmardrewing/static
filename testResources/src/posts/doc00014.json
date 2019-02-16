@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/7/colorstudy-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/7/colorstudy-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":344,
-	"date":"2018-2-7 21:5:11",
-	"url":"https://drewing.de/blog/2018/2/7/colorstudy/",
-	"title":"Colorstudy",
-	"title_plain":"colorstudy",
-	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
-	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog%2F2018%2F2%2F7%2Fcolorstudy.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/2/7/colorstudy-w800.png\" width=\"800\"></a>",
-	"dsq_thread_id":"1000344 https://drewing.de/blog/2018/2/7/colorstudy",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/11/06/nightly-sketch-nr-11/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-11-06",
+	"title":"Nightly Sketch Nr. 11",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>Of people and penguins / sketch for a sixtin bazaar</p><div id=\"attachment_507\" style=\"width: 500px\" class=\"wp-caption aligncenter\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11.jpg\"><img class=\"size-large wp-image-507\" title=\"nightlysketch11\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11-1024x723.jpg\" alt=\"Nightly Sketch Nr. 11\" width=\"490\" height=\"345\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11-1024x723.jpg 1024w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11-300x212.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11.jpg 1200w\" sizes=\"(max-width: 490px) 100vw, 490px\" /></a><p class=\"wp-caption-text\">Nightly Sketch Nr. 11</p></div><p>Want to know what this is about? See <a title=\"About Nightly Sketches\" href=\"?p=428\" target=\"_self\">“Nightly Sketches”</a>.</p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Nightly Sketch Nr. 11","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/11/nightlysketch11.jpg","max_resolution":""}]
 }

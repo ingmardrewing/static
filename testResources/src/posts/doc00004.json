@@ -1,17 +1,14 @@
 {
-	"version":1,
-	"thumbImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png",
-	"postImg":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png",
+	"version":2,
 	"filename":"index.html",
-	"id":1,
-	"date":"%s",
-	"url":"http://localhost/blog/test5/",
-	"title":"test post",
-	"title_plain":"test_post",
-	"excerpt":"test post excerpt",
-	"content":"test post content",
-	"dsq_thread_id":"test post dsq id",
-	"thumbBase64":"",
+	"path_from_doc_root":"/blog/2009/10/03/glen-biblis/",
 	"category":"",
-	"microThumbUrl":""
+	"tags":"",
+	"create_date":"2009-10-03",
+	"title":"Glen Biblis",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p>In the heart of Germany, where the savage forces of nature once freely roamed, man has managed to tame the wild spirits.<br />You can still taste the very energy of nature in a glas of Glen Biblis, though it has been transformed into a higher state of being.</p><p>This unforgettable  whisky comes in two different flavours: Biblis A has been ripened over the last 34 years and shows a powerful, yet slightly leaky nature. Biblis B is younger, but just as strong.</p><p>Try this unique flavour &#8211; and be assured: you&#8217;ll never be the same again &#8230;</p><div id=\"attachment_350\" style=\"width: 310px\" class=\"wp-caption alignnone\"><a href=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/glen_bibilis.jpg\"><img class=\"size-medium wp-image-350\" src=\"http://www.drewing.de/blog/wp-content/uploads/2009/10/glen_bibilis-300x270.jpg\" alt=\"From the hearth of Germany comes a powerful whisky\" width=\"300\" height=\"270\" srcset=\"https://www.drewing.de/blog/wp-content/uploads/2009/10/glen_bibilis-300x270.jpg 300w, https://www.drewing.de/blog/wp-content/uploads/2009/10/glen_bibilis.jpg 600w\" sizes=\"(max-width: 300px) 100vw, 300px\" /></a><p class=\"wp-caption-text\">Glen Biblis - A powerful whisky.</p></div>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Glen Biblis","w_190":"","w_390":"http://www.drewing.de/blog/wp-content/uploads/2009/10/glen_bibilis.jpg","w_800":"http://www.drewing.de/blog/wp-content/uploads/2009/10/glen_bibilis.jpg","max_resolution":""}]
 }
