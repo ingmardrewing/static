@@ -124,12 +124,14 @@ func TestGenSite(t *testing.T) {
 		t.Error("No index.html file found at:", indexPath)
 	}
 
-	index0Path := path.Join(deployDir, "blog", "index0.html")
-	index0Exists, _ := fs.PathExists(index0Path)
+	/*
+		index0Path := path.Join(deployDir, "blog", "index0.html")
+		index0Exists, _ := fs.PathExists(index0Path)
 
-	if !index0Exists {
-		t.Error("No index0.html file found at:", index0Path)
-	}
+			if !index0Exists {
+				t.Error("No index0.html file found at:", index0Path)
+			}
+	*/
 
 	tearDown()
 }
