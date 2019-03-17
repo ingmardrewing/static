@@ -1,0 +1,14 @@
+{
+	"version":2,
+	"filename":"index.html",
+	"path_from_doc_root":"/portfolio/messenger/",
+	"category":"",
+	"tags":[],
+	"create_date":"2017-08-18",
+	"title":"Messenger",
+	"title_plain":"",
+	"excerpt":"",
+	"content":"<p><a href=\"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger.png\"><img src=\"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger-800x801.png\" alt=\"\" width=\"800\" height=\"801\" class=\"alignleft size-medium wp-image-6108\" srcset=\"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger-800x801.png 800w, https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger-400x400.png 400w\" sizes=\"(max-width: 800px) 100vw, 800px\" /></a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Messenger","w_190":"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger-w190.png","w_390":"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger.png","w_800":"https://s3.amazonaws.com/drewingdeblog/blog/wp-content/uploads/2017/08/18232641/messenger-800x801.png","max_resolution":""}]
+}

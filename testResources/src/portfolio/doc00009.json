@@ -1,0 +1,14 @@
+{
+	"version":2,
+	"filename":"index.html",
+	"path_from_doc_root":"/portfolio/2019/1/2/scotch/",
+	"category":"blog post",
+	"tags":[],
+	"create_date":"2019-01-02",
+	"title":"Scotch",
+	"title_plain":"scotch",
+	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
+	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/2/scotch.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/2/scotch-w800.png\" width=\"800\"></a>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Scotch","w_190":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/2/scotch-w190.png","w_390":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/2/scotch-w390.png","w_800":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/2/scotch-w800.png","max_resolution":""}]
+}
