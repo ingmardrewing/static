@@ -10,7 +10,6 @@ import (
 
 	"github.com/ingmardrewing/actions"
 	"github.com/ingmardrewing/fs"
-	"github.com/ingmardrewing/staticController"
 	"github.com/ingmardrewing/staticPersistence"
 	log "github.com/sirupsen/logrus"
 )
@@ -97,13 +96,13 @@ func checkFlagsFn() {
 func generateSiteLocallyFn() {
 	log.Debug("main:generateSiteLocallyFn")
 	log.Debug(conf)
-	sc := staticController.NewSitesController(conf)
+	sc := NewSitesController(conf)
 	sc.UpdateStaticSites()
 }
 
 func updateJsonFiles() {
 	log.Debug("main:updateJsonFiles")
-	sc := staticController.NewSitesController(conf)
+	sc := NewSitesController(conf)
 	sc.UpdateJsonFiles()
 }
 
