@@ -1,0 +1,14 @@
+{
+	"version":2,
+	"filename":"index.html",
+	"path_from_doc_root":"/portfolio/2018/8/27/female-sidekick/",
+	"category":"blog post",
+	"tags":[],
+	"create_date":"2018-08-27",
+	"title":"Female Sidekick",
+	"title_plain":"female-sidekick",
+	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
+	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/8/27/femaleSidekick.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/8/27/femaleSidekick-w800.png\" width=\"800\"></a>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Female Sidekick","w_190":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/8/27/femaleSidekick-w190.png","w_390":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/8/27/femaleSidekick-w390.png","w_800":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/8/27/femaleSidekick-w800.png","max_resolution":""}]
+}

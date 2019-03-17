@@ -19,6 +19,11 @@
         "subDir": ""
       },
       {
+        "dir": "testResources/src/portfolio/",
+        "type": "portfolio",
+        "subDir": ""
+      },
+      {
         "dir": "testResources/src/narrative/",
         "type": "narrative",
         "subDir": "devabo.de"

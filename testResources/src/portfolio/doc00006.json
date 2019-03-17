@@ -1,0 +1,14 @@
+{
+	"version":2,
+	"filename":"index.html",
+	"path_from_doc_root":"/portfolio/female-character/",
+	"category":"",
+	"tags":[],
+	"create_date":"2018-01-16",
+	"title":"Female Character",
+	"title_plain":"female-character",
+	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
+	"content":"<p><a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter.png\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png\" alt=\"\" /></a></p>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Female Character","w_190":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w190.png","w_390":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w390.png","w_800":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2018/1/16/FemaleCharacter-w800.png","max_resolution":""}]
+}

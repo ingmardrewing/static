@@ -1,0 +1,14 @@
+{
+	"version":2,
+	"filename":"index.html",
+	"path_from_doc_root":"/portfolio/2019/1/7/big-ben-striking-thirteen/",
+	"category":"blog post",
+	"tags":[],
+	"create_date":"2019-01-07",
+	"title":"Big Ben Striking Thirteen",
+	"title_plain":"big-ben-striking-thirteen",
+	"excerpt":"A blog containing texts, drawings, graphic narratives/novels and (rarely) code snippets by Ingmar Drewing.",
+	"content":"<a href=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/7/bigBenStrikingThirteen.jpg\"><img src=\"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/7/bigBenStrikingThirteen-w800.jpg\" width=\"800\"></a>",
+	"thumb_base64":"",
+	"images_urls":[{"title":"Big Ben Striking Thirteen","w_190":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/7/bigBenStrikingThirteen-w190.jpg","w_390":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/7/bigBenStrikingThirteen-w390.jpg","w_800":"https://drewingde.s3.us-west-1.amazonaws.com/blog/2019/1/7/bigBenStrikingThirteen-w800.jpg","max_resolution":""}]
+}
