@@ -57,6 +57,7 @@ func (n *blogNaviPageGenerator) Createpages() []staticIntf.Page {
 
 		naviPages = append(naviPages, np)
 	}
+
 	return naviPages
 }
 
@@ -68,6 +69,16 @@ func (n *blogNaviPageGenerator) getReversedPages() []staticIntf.Page {
 		reversed = append(reversed, pages[i])
 	}
 	return reversed
+}
+
+func (n *blogNaviPageGenerator) generateBundles() [][]staticIntf.Page {
+	reversedBundles := n.generateReversedBundles()
+	length := len(reversedBundles)
+	pageBundles := [][]staticIntf.Page{}
+	for i := length - 1; i >= 0; i-- {
+		pageBundles = append(pageBundles, reversedBundles[i].getElements())
+	}
+	return pageBundles
 }
 
 func (n *blogNaviPageGenerator) generateReversedBundles() []*elementBundle {
@@ -85,14 +96,4 @@ func (n *blogNaviPageGenerator) generateReversedBundles() []*elementBundle {
 		bundles = append(bundles, b)
 	}
 	return bundles
-}
-
-func (n *blogNaviPageGenerator) generateBundles() [][]staticIntf.Page {
-	reversedBundles := n.generateReversedBundles()
-	length := len(reversedBundles)
-	pageBundles := [][]staticIntf.Page{}
-	for i := length - 1; i >= 0; i-- {
-		pageBundles = append(pageBundles, reversedBundles[i].getElements())
-	}
-	return pageBundles
 }
