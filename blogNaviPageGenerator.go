@@ -5,7 +5,6 @@ import (
 
 	"github.com/ingmardrewing/staticIntf"
 	"github.com/ingmardrewing/staticModel"
-	"github.com/ingmardrewing/staticPersistence"
 )
 
 func NewBlogNaviPageGenerator(
@@ -41,22 +40,17 @@ func (n *blogNaviPageGenerator) Createpages() []staticIntf.Page {
 			filename = "index.html"
 		}
 
-		dto := staticPersistence.NewFilledDto(
-			n.site.Domain()+" Overview",
-			"",
-			"",
-			"blog post navi",
-			"",
-			n.path,
-			filename,
-			[]string{},
-			[]staticIntf.Image{})
+		pm := staticModel.NewPageMaker()
+		pm.Title(n.site.Domain() + " Overview")
+		pm.Category("blog post navi")
+		pm.PathFromDocRoot(n.path)
+		pm.FileName(filename)
+		pm.Site(n.site)
+		pm.NavigatedPages(bundle...)
 
-		np := staticModel.NewPage(dto, n.site.Domain(), n.site)
-		np.NavigatedPages(bundle...)
-
-		naviPages = append(naviPages, np)
+		naviPages = append(naviPages, pm.Make())
 	}
+
 	return naviPages
 }
 
@@ -68,6 +62,16 @@ func (n *blogNaviPageGenerator) getReversedPages() []staticIntf.Page {
 		reversed = append(reversed, pages[i])
 	}
 	return reversed
+}
+
+func (n *blogNaviPageGenerator) generateBundles() [][]staticIntf.Page {
+	reversedBundles := n.generateReversedBundles()
+	length := len(reversedBundles)
+	pageBundles := [][]staticIntf.Page{}
+	for i := length - 1; i >= 0; i-- {
+		pageBundles = append(pageBundles, reversedBundles[i].getElements())
+	}
+	return pageBundles
 }
 
 func (n *blogNaviPageGenerator) generateReversedBundles() []*elementBundle {
@@ -85,14 +89,4 @@ func (n *blogNaviPageGenerator) generateReversedBundles() []*elementBundle {
 		bundles = append(bundles, b)
 	}
 	return bundles
-}
-
-func (n *blogNaviPageGenerator) generateBundles() [][]staticIntf.Page {
-	reversedBundles := n.generateReversedBundles()
-	length := len(reversedBundles)
-	pageBundles := [][]staticIntf.Page{}
-	for i := length - 1; i >= 0; i-- {
-		pageBundles = append(pageBundles, reversedBundles[i].getElements())
-	}
-	return pageBundles
 }
