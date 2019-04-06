@@ -104,7 +104,7 @@ type homeSource struct {
 func (hs *homeSource) generate() { hs.generateContainer() }
 
 func (hs *homeSource) CreateContext() staticIntf.Context {
-	return staticPresentation.NewHomeContextGroup(hs.site)
+	return staticPresentation.NewHomeContext(hs.site)
 }
 
 //
@@ -117,7 +117,7 @@ func (nms *narrativeMarginalSource) generate() {
 }
 
 func (nms *narrativeMarginalSource) CreateContext() staticIntf.Context {
-	return staticPresentation.NewMarginalContextGroup(nms.site)
+	return staticPresentation.NewMarginalContext(nms.site)
 }
 
 //
@@ -135,7 +135,7 @@ func (mrs *marginalSource) generate() {
 }
 
 func (mrs *marginalSource) CreateContext() staticIntf.Context {
-	return staticPresentation.NewMarginalContextGroup(mrs.site)
+	return staticPresentation.NewMarginalContext(mrs.site)
 }
 
 //
@@ -156,7 +156,7 @@ func (ns *narrativeSource) generate() {
 }
 
 func (ns *narrativeSource) CreateContext() staticIntf.Context {
-	return staticPresentation.NewNarrativeContextGroup(ns.site)
+	return staticPresentation.NewNarrativeContext(ns.site)
 }
 
 //
