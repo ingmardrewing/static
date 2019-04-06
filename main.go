@@ -23,7 +23,7 @@ var (
 	fstrato     = false
 	fclear      = false
 	fconfigPath = ""
-	conf        []staticPersistence.JsonConfig
+	conf        []staticPersistence.Config
 	configFile  = "configNew.json"
 	debug       = false
 

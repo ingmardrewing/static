@@ -16,7 +16,7 @@ import (
 // Creates a new siteCreator from the part of the
 // JsonConfig specific to one site. The complete
 // config can define several sites.
-func NewSiteCreator(config staticPersistence.JsonConfig) *siteCreator {
+func NewSiteCreator(config staticPersistence.Config) *siteCreator {
 	siteCreator := new(siteCreator)
 	siteCreator.config = config
 	return siteCreator
@@ -25,7 +25,7 @@ func NewSiteCreator(config staticPersistence.JsonConfig) *siteCreator {
 // Intended for migrating old Json data, which still
 // has the form of wordpress exported json data, to
 // the newer streamlined version.
-func RewriteJson(config staticPersistence.JsonConfig) {
+func RewriteJson(config staticPersistence.Config) {
 	siteCreator := new(siteCreator)
 	siteCreator.config = config
 	siteCreator.rewritePages()
@@ -35,7 +35,7 @@ func RewriteJson(config staticPersistence.JsonConfig) {
 // web site, located under one domain.
 type siteCreator struct {
 	site           staticIntf.Site
-	config         staticPersistence.JsonConfig
+	config         staticPersistence.Config
 	sources        []source
 	contexts       []staticIntf.Context
 	fileContainers []fs.FileContainer
@@ -190,7 +190,7 @@ func (s *siteCreator) contextExists(cg staticIntf.Context) bool {
 
 // Fills the file containers with the data to
 // be written
-func (s *siteCreator) fillFileContainers(config staticPersistence.JsonConfig) {
+func (s *siteCreator) fillFileContainers(config staticPersistence.Config) {
 	collector := NewComponentCollector()
 	for _, ctx := range s.contexts {
 		cmps := ctx.GetComponents()
