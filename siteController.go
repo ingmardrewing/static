@@ -7,7 +7,7 @@ import (
 
 // Creates a new sitesController, which creates
 // multiple sites based on the given json config
-func NewSitesController(configs []staticPersistence.JsonConfig) *sitesController {
+func NewSitesController(configs []staticPersistence.Config) *sitesController {
 	c := new(sitesController)
 	c.configs = configs
 	return c
@@ -15,7 +15,7 @@ func NewSitesController(configs []staticPersistence.JsonConfig) *sitesController
 
 // the sitesController struct
 type sitesController struct {
-	configs []staticPersistence.JsonConfig
+	configs []staticPersistence.Config
 }
 
 // Intended for migrational purposes

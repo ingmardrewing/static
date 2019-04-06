@@ -16,13 +16,13 @@ type source interface {
 	generate()
 	Container() staticIntf.PagesContainer
 	CreateContext() staticIntf.Context
-	SetData(variant, headline, dir, subDir string, site staticIntf.Site, config staticPersistence.JsonConfig)
+	SetData(variant, headline, dir, subDir string, site staticIntf.Site, config staticPersistence.Config)
 }
 
 func NewSource(
 	variant, dir, subDir, headline string,
 	site staticIntf.Site,
-	config staticPersistence.JsonConfig) source {
+	config staticPersistence.Config) source {
 
 	log.Debugf("NewSource() called for variant %s\n", variant)
 	var s source
@@ -167,7 +167,7 @@ type defaultSource struct {
 	dir       string
 	subDir    string
 	site      staticIntf.Site
-	config    staticPersistence.JsonConfig
+	config    staticPersistence.Config
 	container staticIntf.PagesContainer
 }
 
@@ -181,7 +181,7 @@ func (a *defaultSource) Container() staticIntf.PagesContainer {
 
 func (a *defaultSource) generate() {}
 
-func (a *defaultSource) SetData(variant, headline, dir, subDir string, site staticIntf.Site, config staticPersistence.JsonConfig) {
+func (a *defaultSource) SetData(variant, headline, dir, subDir string, site staticIntf.Site, config staticPersistence.Config) {
 	a.variant = variant
 	a.headline = headline
 	a.dir = dir
