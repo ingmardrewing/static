@@ -201,7 +201,7 @@ func (a *defaultSource) generateContainer() {
 }
 
 func (a *defaultSource) createPage(dto staticIntf.PageDto) {
-	p := staticModel.NewPage(dto, a.config.Domain, a.site)
+	p := staticModel.NewPage(dto, a.site)
 	if p == nil {
 		log.Error("defaultSource.createPage() - newly created page is nil")
 	}
