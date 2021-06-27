@@ -24,7 +24,7 @@ var (
 	fclear      = false
 	fconfigPath = ""
 	conf        []staticPersistence.Config
-	configFile  = "configNew.json"
+	configFile  = "config.json"
 	debug       = false
 
 	generateSiteLocally = generateSiteLocallyFn
