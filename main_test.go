@@ -41,7 +41,7 @@ func TestMainInternals(t *testing.T) {
 }
 
 func setup() {
-	conf = staticPersistence.ReadConfig("testResources/", "configNew.json")
+	conf = staticPersistence.ReadConfig("testResources/", "config.json")
 	log.SetLevel(log.DebugLevel)
 }
 
